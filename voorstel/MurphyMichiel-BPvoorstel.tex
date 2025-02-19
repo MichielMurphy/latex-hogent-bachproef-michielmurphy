@@ -1,0 +1,72 @@
+%==============================================================================
+% Sjabloon onderzoeksvoorstel bachproef
+%==============================================================================
+% Gebaseerd op document class `hogent-article'
+% zie <https://github.com/HoGentTIN/latex-hogent-article>
+
+% Voor een voorstel in het Engels: voeg de documentclass-optie [english] toe.
+% Let op: kan enkel na toestemming van de bachelorproefcoördinator!
+\documentclass{hogent-article}
+\usepackage{xcolor}
+% Invoegen bibliografiebestand
+\addbibresource{voorstel.bib}
+
+% Informatie over de opleiding, het vak en soort opdracht
+\studyprogramme{Professionele bachelor toegepaste informatica}
+\course{Bachelorproef}
+\assignmenttype{Onderzoeksvoorstel}
+% Voor een voorstel in het Engels, haal de volgende 3 regels uit commentaar
+% \studyprogramme{Bachelor of applied information technology}
+% \course{Bachelor thesis}
+% \assignmenttype{Research proposal}
+
+\academicyear{2024-2025} % TODO: pas het academiejaar aan
+
+% TODO: Werktitel
+
+%\title{Het zoeken en implementeren van een JavaScript Word Cloud library die een interactieve, voorrangsgestuurde woordwolk genereerd als gebruikerinterface voor de IDP-Z3 webIDE van de KU Leuven.}
+
+\title{Het inzetten van een front-end softwarebibliotheek die een dataset op een interactieve dynamische en prioriteit gestuurde manier visualiseert om structuur en duidelijkheid te creëren voor de gebruikersinterface van de IDP-Z3 webIDE van de KU Leuven.}
+
+% TODO: Studentnaam en emailadres invullen
+\author{Michiel Murphy}
+\email{michiel.murphy@student.hogent.be}
+
+% TODO: Medestudent
+% Gaat het om een bachelorproef in samenwerking met een student in een andere
+% opleiding? Geef dan de naam en emailadres hier
+% \author{Yasmine Alaoui (naam opleiding)}
+% \email{yasmine.alaoui@student.hogent.be}
+
+% TODO: Geef de co-promotor op
+\supervisor[Co-promotor]{W. Delvaux (KU Leuven, \href{mailto:wim.delvaux@adaptiveplanet.com}{wim.delvaux@adaptiveplanet.com})}
+
+% Binnen welke specialisatierichting uit 3TI situeert dit onderzoek zich?
+% Kies uit deze lijst:
+%
+% - Mobile \& Enterprise development
+% - AI \& Data Engineering
+% - Functional \& Business Analysis
+% - System \& Network Administrator
+% - Mainframe Expert
+% - Als het onderzoek niet past binnen een van deze domeinen specifieer je deze
+%   zelf
+%
+\specialisation{Mobile \& Enterprise development}
+\keywords{Softwarebibliotheek, Visualisatie, Navigatie, Bruikbaarheid, Gebruikersinterface}
+
+\begin{document}
+
+\begin{abstract}
+ Websites bestaan sinds de jaren 90 en zijn sindsdien onderdeel van het dagelijks leven geworden. Wereldwijd worden dagelijks meer dan een miljard websites bezocht, waarbij gebruikers op zoek zijn naar informatie, diensten of producten. Echter, niet elke bezoeker slaagt erin de gewenste informatie snel en effectief te vinden. De manier waarop informatie wordt gepresenteerd en hoe gebruikers door een website navigeren, heeft directe invloed op de algemene gebruikerservaring en de effectiviteit van de website. \textcolor{red}{Deze studie focust zich op de gebruikersinterface van de webIDE van het IDP-Z3 redeneersysteem van de KU Leuven, die gekarakteriseerd wordt door een onaantrekkelijke en ongestructureerde interface, wat de bruikbaarheid bemoeilijkt. Daarnaast wordt er geen visueel onderscheid gemaakt tussen relevante en minder relevante informatie, wat de navigeerbaarheid negatief beïnvloedt.} Deze studie wil dit probleem aanpakken door de huidige gebruikersinterface te verbeteren. Dit onderzoek wordt uitgevoerd om de volgende vraag te beantwoorden: Hoe kan een front-end softwarebibliotheek die een dataset op een interactieve, dynamische en prioriteit gestuurde manier visualiseert, geïmplementeerd worden om structuur en duidelijkheid te creëren, zodat de navigeerbaarheid en bruikbaarheid van de IDP-Z3 webIDE van de KU Leuven verbeterd worden? Er wordt een vergelijkende studie uitgevoerd om de meest geschikte softwarebibliotheek te identificeren. Vervolgens wordt er een prototype van een webapplicatie ontwikkeld om de invloed van de nieuwe visualisatie te testen. Het verwachte resultaat van dit onderzoek is dat de nieuwe gebruikersinterface de bruikbaarheid en navigeerbaarheid verbetert. Hieruit kan geconcludeerd worden dat een softwarebibliotheek erin slaagt de gebruikerservaring en de efficiëntie van een website positief te beïnvloeden.
+\end{abstract}
+
+\tableofcontents
+
+% De hoofdtekst van het voorstel zit in een apart bestand, zodat het makkelijk
+% kan opgenomen worden in de bijlagen van de bachelorproef zelf.
+\input{voorstel-inhoud}
+
+\printbibliography[heading=bibintoc]
+
+\end{document}

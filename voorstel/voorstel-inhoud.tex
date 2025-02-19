@@ -1,51 +1,57 @@
 %---------- Inleiding ---------------------------------------------------------
-
-% TODO: Is dit voorstel gebaseerd op een paper van Research Methods die je
-% vorig jaar hebt ingediend? Heb je daarbij eventueel samengewerkt met een
-% andere student?
-% Zo ja, haal dan de tekst hieronder uit commentaar en pas aan.
-
-%\paragraph{Opmerking}
-
-% Dit voorstel is gebaseerd op het onderzoeksvoorstel dat werd geschreven in het
-% kader van het vak Research Methods dat ik (vorig/dit) academiejaar heb
-% uitgewerkt (met medesturent VOORNAAM NAAM als mede-auteur).
-% 
-
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Naast het creëren van een aangename gebruikerservaring spelen visuele effecten tijdens het navigeren op een website een significante rol in de communicatie van inhoud. Een woord dat getoond wordt, de kleur die daaraan wordt toegekend, de lettergrootte die wordt gekozen…~\autocite{bordbar2016}. Al deze keuzes communiceren iets naar de bezoeker van de site. Volgens~\textcite{Lee2012} is de bruikbaarheid van een website een fundamenteel onderdeel van de gebruikerservaring. 
 
+Deze studie richt zich op de online webIDE van het IDP-Z3 redeneersysteem van de KU Leuven. \textcolor{red}{De huidige gebruikersinterface van deze webIDE heeft overrompelt eindgebruikers met een ongestructureerde componenten en informatie. Het heeft een zwakke visuele uitstraling en kan een stuk verbeteren in bruikbaarheid en navigeerbaardheid.} De KU Leuven wil een nieuwe interface waarbij gebruikers snel en efficiënt kunnen navigeren naar wat ze nodig hebben. Het is de bedoeling dat de gebruikers geholpen worden in hun zoektocht naar de gewenste informatie.
+
+%Hiervoor willen ze gebruik maken van een woordwolk. Volgens~\textcite{Atenstaedt2012} is een woordwolk een visuele weergave van woordfrequentie. Hoe vaker een term voorkomt in een dataset, hoe groter het woord verschijnt in de wolk.
+
+Momenteel toont de huidige gebruikersinterface een opsomming van eigenschappen die gezien kunnen worden als filters. Elke filter heeft dezelfde opmaak en er wordt geen onderscheid gemaakt tussen relevante en minder relevante filters. Deze termen moeten op een andere manier gevisualiseerd worden en moeten kunnen reageren op realtime-interactie van de gebruiker. Via deze interactie kan er een prioriteit gekoppeld worden aan elke filter. De visualisatie van de dataset wordt vervolgens periodiek geüpdatet, zodat de filters die het meest aangeklikt worden, opvallender worden voor de eindgebruiker.
+
+%Het probleem dat zich voordoet, is dat bestaande woordwolk-generatoren louter bedoeld\-zijn als ontwerptools. Ze kunnen niet omgaan met realtime veranderingen en bieden enkel opties aan voor het aanpassen van de typografie, kleur, woordoriëntatie en de vorm van de wolk \autocite{Heimerl2014}. De flexibiliteit en interactiviteit van deze derde-partijtoepassingen zijn te beperkt \autocite{Huang2019}. 
+
+De centrale vraag van dit onderzoek is: \textcolor{blue}{Hoe kan een front-end softwarebibliotheek die informatie op een interactieve, dynamische en prioriteit gestuurde manier visualiseert, geïmplementeerd worden om structuur en duidelijkheid te creëren, zodat de navigeerbaarheid en bruikbaarheid van de IDP-Z3 webIDE van de KU Leuven verbeterd worden?} Verder worden er antwoorden gevonden op de volgende deelvragen:
 \begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
+    \item \textcolor{green}{Op welke manier wordt de dataset in de huidige gebruikersinterface gevisualiseerd?}
+    \item \textcolor{green}{Welke problemen heeft de huidige gebruikersinterface?}
+    \item \textcolor{green}{Wat wordt bedoeld met bruikbaarheid en navigeerbaarheid van een website?}
+    \item \textcolor{orange}{Welke visuele elementen spelen een rol in het verbeteren van de gebruikerservaring?}
+    \item \textcolor{orange}{Wat zijn de belangrijkste vereisten voor de nieuwe gebruikersinterface?}
+    \item \textcolor{orange}{Wat zijn de visualisatietools die kunnen gebruikt worden en welke is de meest toepasselijke?}
 \end{itemize}
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+De methode die in deze studie gebruikt wordt, is het bouwen van een proof-of-concept voorafgegaan aan een vergelijkende studie. Er wordt een webapplicatie gebruikmakend van een softwarebibliotheek opgezet die communiceert met een REST API-server. Aan de hand van de require\-ments-analyse van de vergelijkende studie wordt er bepaald welke front-end softwarebibliotheek hiervoor het best past.
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+Het eerste deel van dit rapport omvat de bevindingen van de literatuurstudie, waarin een antwoord wordt geformuleerd op bepaalde deelvragen. Vervolgens wordt de methodologie beschreven en worden de verwachte resultaten gesch\-etst. Het laatste hoofdstuk behandelt de conclusie van dit onderzoek.
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+\subsection [Esthetiek, hiërarchie en voorkeur]{Esthetiek, visuele hiërarchie en\\gebruikersvoorkeur}
+Esthetiek is door de jaren heen op verschillende manieren gedefinieerd. Esthetiek kan worden omschreven als “de wetenschap van hoe dingen via de zintuigen worden herkend”~\autocite[p.~12]{Noponen2017}. Website-esthetiek speelt een cruciale rol bij het ondersteunen van de inhoud en functionaliteit van een website. Elk visueel element communiceert iets naar de gebruiker. Deze effecten mogen door webdesigners niet worden genegeerd; het is juist door inzicht te hebben in deze effecten dat communicatie kan worden beïnvloed. 
+De functionaliteit van een website verwijst naar de gebruiksvriendelijke aspecten van de interface. Het belangrijkste doel van functionaliteit is het creëren van websites waar gebruikers snel en efficiënt de gewenste informatie kunnen terugvinden~\autocite{Thorlacius2007}. Het verkrijgen van de gewenste inhoud is op veel websites moeilijk. Dit probleem ontstaat wanneer een website niet aansluit bij de behoeften van de gebruikers, maar zich voornamelijk richt op de interne prioriteiten van de organisatie. Een andere oorzaak is dat de informatie op de website niet logisch gestructureerd is voor de gebruiker~\autocite{Bevan1997}.
+De manier waarop een gebruiker met een webpagina interacteert, wordt beïnvloed door de visuele uitstraling van de pagina~\autocite{Michailidou2008}. Een aantrekkelijke compositie trekt de aandacht van de gebruiker en brengt de boodschap snel en duidelijk over. Een betekenisvol contrast tussen schermelementen, ruimtelijke groeperingen en het uitlijnen van de elementen draagt bij aan deze aantrekkingskracht en zijn aspecten van visuele hiërarchie\\ \autocite{Bhaskar2011}. 
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+Websitehiërarchie speelt een centrale rol in het structureren van informatie op websites en beïnvloedt hoe gebruikers zich op een website navigeren~\autocite{Djonov2007}. Uit het onderzoek van \textcite{Urano2021} blijkt dat hiërarchie in de grafische indeling gebruikers kan sturen in een voorgeschreven volgorde. Webdesigners gebruiken deze techniek om de gebruikerservaring te sturen. Dit principe wordt bijvoorbeeld gebruikt in kranten, waarbij een kop met groot, vetgedrukt lettertype de aandacht van de lezer trekt. In dergelijke gevallen bepaalt de redacteur welke informatie het belangrijkst is. Door het gebruik van grootte, kleur, contrast, positionering en typografie kunnen websites op een soortgelijke manier hun gebruikersinterface optimaliseren en de bruikbaarheid verbeteren\\\autocite{Raghavendra2024}.
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+Een cruciaal element van visuele hiërarchie is de juiste prioritering van informatie. Gebruikers kunnen op die manier snel de gewenste informatie terugvinden~\autocite{Raghavendra2024}. In dit onderzoek ligt de nadruk echter op het visualiseren en begrijpen van de prioriteiten van de gebruiker. Volgens~\textcite{Lee2010} is het essentieel om inzicht te verkrijgen in hoe gebruikers hun voorkeuren vormen. Gebruikersvoorkeur verwijst naar de keuze tussen alternatieven op basis van persoonlijke mening. Deze voorkeur is een weerspiegeling van de gevoelens en houding ten opzichte van de website en beïnvloedt ook het gedrag van de gebruiker op die website~\autocite{Lee2010}.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+\subsection{Bruikbaarheid}
+Bruikbaarheid, ook wel gebruiksvriendelijkhe\-id genoemd, kan omschreven worden als de mate waarin gebruikers een website als gemakkelijk ervaren om te gebruiken~\autocite{Dianat2019}. Volgens~\textcite{Dingli2014} kan bruikbaarheid beschouwd worden als een kwaliteitsattribuut.\\Het doel van bruikbaarheid is om gebruikers te helpen hun taken efficiënt uit te voeren. Voor gebruikers die weinig tijd hebben om een systeem te leren kennen en minder computerervaring hebben, is bruikbaarheid van groot belang~\autocite{Mazumder2014}. Een eenvoudig ontwerp dat voldoet aan de behoeften van de gebruiker zorgt ervoor een doelgerichte gebruiker hun taken snel en moeiteloos kunnen voltooien en draagt bij aan de gebruiksvriendelijkheid van de website~\autocite{Pearson2007}. Dit is exact waar de focus op ligt in dit onderzoek: het ontdekken van de noden van de gebruiker en de interface hierop afstemmen. Volgens~\textcite{Zachrison2022} wordt de eerste indruk van de bruikbaarheid vastgesteld door het kijken naar de grafische interface zonder er daadwerkelijk gebruik van te maken. Dit wordt de pre-use usability of de bruikbaarheid voor gebruik genoemd. In deze studie zal een nieuwe gebruikersinterface ontworpen worden met een positieve pre-use ability.
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+\subsection{Navigeerbaarheid}
+Navigeerbaarheid, of navigatiegemak, verwijst naar de mate van moeite en tijd die een gebruiker nodig heeft om de gewenste informatie op een interface te vinden. Het is een cruciaal element voor de kwaliteit van een website en essentieel om ervoor te zorgen dat de gebruiker zich in controle voelt~\autocite{Zachrison2022}. Eenvoudige, efficiënte, gebruiksgerichte en flexibele navigatie helpt de gebruiker bij het bereiken van zijn doelen~\autocite{Pearson2007}. Door de filters in de nieuwe gebruikersinterface te prioriteren en visueel aan te passen, kan de gebruiker snel vinden wat hij nodig heeft.
+
+%\subsection [Wat is een woordwolk?]{Wat is een woordwolk en waarom wordt deze gebruikt?}
+%Zoals hierboven vermeld, is een woordwolk e\-en visuele weergave van woordfrequentie. Hoe vaker een term voorkomt in een dataset, hoe groter het woord verschijnt in de wolk. Het wordt vaak gebruikt als hulpmiddel om de focus van teksten te identificeren. Woordwolken worden gebruikt in het bedrijfsleven en de politiek om 
+%bijvoorbeeld de inhoud van politieke toespraken te visualiseren~\autocite{Atenstaedt2012}. Volgens~\textcite{Filatova2016} zijn ze oorspronkelijk ontworpen om websites of posters aantrekkelijker te maken, maar ze kunnen ook in het onderwijs voorkomen. Een woordwolk kan studenten helpen hun leestijd te verkorten, hun schrijfvaardigheden te verbeteren en hun woordenschat uit te breiden. Daarnaast kunnen ze bijvoorbeeld ook gebruikt worden om nieuwe woordenschat te presenteren.
+%
+%Een woordwolk kan een duidelijk overzicht bi\-eden door de woorden die het vaakst voorkomen, zichtbaar te maken. Hiervoor wordt de lettergrootte van de woorden gekoppeld aan de wo\-ordfrequentie \autocite{Heimerl2014}. Meestal gebeurt dit op een statische manier, maar in deze studie wordt er voornamelijk gefocust om dit dynamisch te laten verlopen. \textcite{DePaolo2014} zegt dat een woordwolk nuttig kan zijn om grote hoeveelheden tekstgegevens te filteren zodat ze makkelijk te begrijpen zijn. Voor dit onderzoek is de hoeveelheid woorden constant en gaat het niet zozeer om de woorden. Volgens~\textcite{KABIR2020} helpt een woordwolk de gedachten van gebruikers te begrijpen. Naast het verbeteren van de klantervaring, worden gebruikers ondersteunt in het nemen van beslissingen op een klantgerichte manier.
+
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -54,31 +60,53 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+% Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+\subsection [Verduidelijkingsfase huidige situatie]{Verduidelijkingsfase huidige geb\-ruikersinterface}
+Vooraleer er een nieuwe gebruikersinterface kan ontwikkeld worden, moet de huidige situatie geanalyseerd worden. Dit omvat het in kaart brengen van de gebruikte frameworks, datamodel en de manier waarop data tussen de front-end en de back-end wordt verzonden.
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+\subsection{Requirements-analysefase}
+Bij het ontwikkelen van een nieuwe gebruikersinterface is het belangrijk te weten waaraan deze moet voldoen. Hiervoor zullen stakeholders betrokken worden bij het formuleren van de vereisten. Vervolgens zullen deze geordend worden volgens prioriteit, gebruik makend van de MoSCoW-methode. Deze fase kan beschouwd worden als de start van de vergelijken\-de studie van beschikbare technologieën en bibliotheken.
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+\subsection {Long list fase}
+Aan de hand van deze eisen en de informatie verzameld in de vorige fasen, zullen er potentiële front-end softwarebibliotheken worden gezocht en opgesomd. Hiervoor wordt de literatuur opnieuw geraadpleegd.
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+\subsection {Short list fase}
+Vervolgens wordt de lijst met alle gevonden alternatieven uitgedund. Via een samenvattende tabel worden de meest geschikte front-end softwarebibliotheek geselecteerd.
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+\subsection{Architectuur van de applicatie}
+Een softwarebibliotheek is niet voldoende om een webapplicatie te bouwen. De architectuur van de applicatie moet ook uitgetekend en besproken worden. Er zal bepaald worden welke technologieën de applicatie moet bevatten. Hieronder is een hypothetische opstelling omtrent de architectuur van de applicatie gegeven:
 
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+\begin{itemize} 
+    \item \textbf{Frontend:} Dit framework zal afhangen van de gekozen front-end softwarebibliotheek. Deze moeten namelijk compatibel zijn.
+    \item \textbf{Backend:} Dit framework zal afhangen van het gekozen front-end framework. Deze m\-oeten met elkaar kunnen communiceren. Er zal gebruik gemaakt worden van een REST API-server.
+    \item \textbf{Database:} Voor het bepalen van et datamodel en de databank kan er gekeken worden naar de huidige technologieën, maar dit is niet noodzakelijk.
+\end{itemize}
+
+\subsection{Proof-of-concept bouwen}
+Nadat alle technische keuzes gemaakt zijn, zu\-llen deze getest en uitgewerkt worden. Er zal een prototype gebouwd worden om te valideren dat de gekozen technologieën effectief werken en de problemen oplossen.
+
+\subsection{Conclusiefase}
+Na de proof-of-concept wordt er een aanbeveling gegeven over het beste mogelijke alternatief. Ook de overgebleven  aspecten die niet aanwezig zijn in een van de onderzochte opties worden geïdentificeerd.
+
+%Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+%
+%Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+%
+%Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+%
+%Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+%
+%Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+%
+%Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
-
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
-
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
-
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+Op basis van de literatuurstudie kan worden geconcludeerd dat de nieuwe gebruikersinterfa\-ce, met een positieve aangepaste visuele uitstraling en gestructureerde componenten, de bruikbaarheid en navigeerbaarheid kan verbeteren. \\Uit het onderzoek wordt verwacht dat een geschikte softwarebibliotheek wordt gevonden die in staat is de bevindingen uit de literatuur te bevestigen. Daarnaast wordt verwacht dat de factoren die de gebruikerservaring verbeteren, met succes kunnen worden toegepast op de interactieve, dynamische en prioriteit gestuurde visualisatie. Om tot een concrete conclusie te komen, is verder onderzoek noodzakelijk. De proof-of-concept moet verder worden ontwikkeld tot een volwaardige webapplicatie die over een langere periode kan worden ingezet binnen de KU Leuven-omgeving.
 
