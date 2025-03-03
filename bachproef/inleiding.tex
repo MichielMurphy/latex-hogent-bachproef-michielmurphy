@@ -5,32 +5,50 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+%De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}: 
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
+%\begin{itemize}
+%  \item context, achtergrond
+%  \item afbakenen van het onderwerp
+%  \item verantwoording van het onderwerp, methodologie
+%  \item probleemstelling
+%  \item onderzoeksdoelstelling
+%  \item onderzoeksvraag
+%  \item \ldots
+%\end{itemize}
+
+In de jaren 80 en 90 werden expertsystemen gebruikt als een vorm van kunstmatige intelligentie. Deze systemen bootsten het besluitvormingsproces van menselijke experts na over een probleemdomein en bestonden uit een kennisbank met feiten en regels, gecombineerd met een inferentie-engine~\autocite{Angeli2010,Castillo2012}. Dit laatste onderdeel werkte met if-then-regels en kon logische conclusies trekken op basis van de beschikbare kennis~\autocite{Buchanan1988}. Een nadeel van expertsystemen was dat ze enkel beslissingen konden nemen op basis van vooraf vastgelegde regels. Ze waren niet in staat om nieuwe of onverwachte situaties op te vangen of zich aan te passen zoals een mens dat zou doen~\autocite{Castillo2012}. Bovendien had de gebruiker zelf geen vrijheid in het maken van keuzes, maar werd hij slechts begeleid naar een oplossing.
+
+Halverwege de jaren 90 verschenen de webshops~\autocite{Chu2007}. Het aantal B2C online winkels neemt dagelijks toe~\autocite{Pokki2016}. Deze systemen geven gebruikers de mogelijkheid om zelf te zoeken naar wat ze nodig hebben. Hierdoor hebben ze meer controle en vrijheid in hun keuzeproces, maar minder begeleiding dan bij een expertsysteem. 
+% OPMERKING: moet dit laatste bevestigd worden door bronnen?)
+
+Naast het creëren van een aangename gebruikerservaring spelen visuele effecten tijdens het navigeren op een website een significante rol in de communicatie van inhoud. Een woord dat getoond wordt, de kleur die daaraan wordt toegekend, de lettergrootte die wordt gekozen…~\autocite{bordbar2016}. Al deze keuzes communiceren iets naar de bezoeker van de site. Volgens~\textcite{Lee2012} is de bruikbaarheid van een website een fundamenteel onderdeel van de gebruikerservaring.
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
+Deze studie richt zich op de online webIDE van het IDP-Z3 redeneersysteem van de KU Leuven. De huidige gebruikersinterface van deze webIDE overrompelt eindgebruikers met een ongestructureerde componenten en informatie. De gebruiker wordt niet begeleid of geholpen doorheen de UI om te vinden wat hij of zij zoekt. Momenteel wordt er een set van properties gevisualiseerd die kan gezien worden als filters die niet aangepast wordt door interactie van de gebruiker. Er is ruimte voor het verbeteren in bruikbaarheid en navigeerbaarheid van de user interface. Daarnaast heeft de huidige UI een zwakke visuele uitstraling.
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+%Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
+De centrale vraag van dit onderzoek is: Hoe kan een front-end softwarebibliotheek die een dataset op een interactieve, dynamische en prioriteit gestuurde manier visualiseert, geïmplementeerd worden om structuur en duidelijkheid te creëren, zodat de navigatie en bruikbaarheid van de IDP-Z3 webIDE van de KU Leuven verbeterd worden? Verder worden er antwoorden gevonden op de volgende deelvragen:
+\begin{itemize}
+    \item Op welke manier wordt de dataset in de huidige gebruikersinterface gevisualiseerd?
+    \item Welke problemen heeft de huidige gebruikersinterface?
+    \item Welke visuele elementen spelen een rol in het verbeteren van de gebruikerservaring?
+%    literatuurstudie: wat is een recommender systeem? of deelvraag?
+    \item Wat zijn de belangrijkste vereisten voor de nieuwe gebruikersinterface?
+    \item Wat zijn de visualisatietools die kunnen gebruikt worden en welke is de meest toepasselijke?
+\end{itemize}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+%Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
+De methode die in deze studie gebruikt wordt, is het bouwen van een proof-of-concept voorafgegaan aan een vergelijkende studie. Er wordt een webapplicatie gebruikmakend van een softwarebibliotheek opgezet om een dynamische en interactieve UI te creëren. Het belang van de properties wordt bepaald door het gebruik en de volgorde van selectie van properties. Deze applicatie communiceert met een REST API-server. Aan de hand van de requirements-analyse van de vergelijkende studie wordt er bepaald welke front-end softwarebibliotheek hiervoor het best past.
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+%Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
