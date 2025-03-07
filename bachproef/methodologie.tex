@@ -26,5 +26,42 @@
 %% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
 %% en geef het een gepaste titel.
 
-\lipsum[21-25]
+\section [Verduidelijkingsfase huidige situatie]{Verduidelijkingsfase huidige geb\-ruikersinterface}
+Vooraleer er een nieuwe gebruikersinterface kan ontwikkeld worden, moet de huidige situatie geanalyseerd worden. Dit omvat het in kaart brengen van de gebruikte frameworks, datamodel en de manier waarop data tussen de front-end en de back-end wordt verzonden.
 
+Reeds begonnen:
+Huidige situatie UI:
+Technisch:
+GUI: Angular
+Properties worden ingeladen met een JSON bericht. Dit bericht wordt telkens herberekend.
+Dataopslag: Geen opslag van data. De backend berekent alles opnieuw omdat eender welk veld kan veranderen en dus de vorige data volledig nutteloos kan zijn.  geen datamodel
+
+Niet technisch:
+Boxgebruik
+dropdown 
+(met afbeeldingen werken)
+
+
+\section{Requirements-analysefase}
+Bij het ontwikkelen van een nieuwe gebruikersinterface is het belangrijk te weten waaraan deze moet voldoen. Hiervoor zullen stakeholders betrokken worden bij het formuleren van de vereisten. Vervolgens zullen deze geordend worden volgens prioriteit, gebruik makend van de MoSCoW-methode. Deze fase kan beschouwd worden als de start van de vergelijken\-de studie van beschikbare technologieën en bibliotheken.
+
+\section {Long list fase}
+Aan de hand van deze eisen en de informatie verzameld in de vorige fasen, zullen er potentiële front-end softwarebibliotheken worden gezocht en opgesomd. Hiervoor wordt de literatuur opnieuw geraadpleegd.
+
+\section {Short list fase}
+Vervolgens wordt de lijst met alle gevonden alternatieven uitgedund. Via een samenvattende tabel worden de meest geschikte front-end softwarebibliotheek geselecteerd.
+
+\section{Architectuur van de applicatie}
+Een softwarebibliotheek is niet voldoende om een webapplicatie te bouwen. De architectuur van de applicatie moet ook uitgetekend en besproken worden. Er zal bepaald worden welke technologieën de applicatie moet bevatten. Hieronder is een hypothetische opstelling omtrent de architectuur van de applicatie gegeven:
+
+\begin{itemize} 
+    \item \textbf{Frontend:} Dit framework zal afhangen van de gekozen front-end softwarebibliotheek. Deze moeten namelijk compatibel zijn.
+    \item \textbf{Backend:} Dit framework zal afhangen van het gekozen front-end framework. Deze m\-oeten met elkaar kunnen communiceren. Er zal gebruik gemaakt worden van een REST API-server.
+    \item \textbf{Database:} Voor het bepalen van et datamodel en de databank kan er gekeken worden naar de huidige technologieën, maar dit is niet noodzakelijk.
+\end{itemize}
+
+\section{Proof-of-concept bouwen}
+Nadat alle technische keuzes gemaakt zijn, zu\-llen deze getest en uitgewerkt worden. Er zal een prototype gebouwd worden om te valideren dat de gekozen technologieën effectief werken en de problemen oplossen.
+
+\section{Conclusiefase}
+Na de proof-of-concept wordt er een aanbeveling gegeven over het beste mogelijke alternatief. Ook de overgebleven  aspecten die niet aanwezig zijn in een van de onderzochte opties worden geïdentificeerd.
