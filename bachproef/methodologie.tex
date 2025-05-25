@@ -5,27 +5,6 @@
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}%
 \label{ch:methodologie}
 
-%% TODO: In dit hoofstuk geef je een korte toelichting over hoe je te werk bent
-%% gegaan. Verdeel je onderzoek in grote fasen, en licht in elke fase toe wat
-%% de doelstelling was, welke deliverables daar uit gekomen zijn, en welke
-%% onderzoeksmethoden je daarbij toegepast hebt. Verantwoord waarom je
-%% op deze manier te werk gegaan bent.
-%% 
-%% Voorbeelden van zulke fasen zijn: literatuurstudie, opstellen van een
-%% requirements-analyse, opstellen long-list (bij vergelijkende studie),
-%% selectie van geschikte tools (bij vergelijkende studie, "short-list"),
-%% opzetten testopstelling/PoC, uitvoeren testen en verzamelen
-%% van resultaten, analyse van resultaten, ...
-%%
-%% !!!!! LET OP !!!!!
-%%
-%% Het is uitdrukkelijk NIET de bedoeling dat je het grootste deel van de corpus
-%% van je bachelorproef in dit hoofstuk verwerkt! Dit hoofdstuk is eerder een
-%% kort overzicht van je plan van aanpak.
-%%
-%% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
-%% en geef het een gepaste titel.
-
 \section [Verduidelijkingsfase huidige situatie]{Verduidelijkingsfase huidige geb\-ruikersinterface}
 %Bron: https://docs.idp-z3.be/en/latest/introduction.html
 De huidige gebruikersinterface van de tool Interactive Consultant (IC), weergegeven in Figuur \ref{fig:gui}, stelt experts in staat hun kennis over een specifiek probleemgebied te digitaliseren. Op basis van deze ingevoerde kennis kunnen eindgebruikers zelfstandig en interactief oplossingen vinden voor hun problemen~\autocite{Carbonnelle2024}. Gebruikers kunnen zelf informatie invoeren, waarna de IC de gevolgen van hun invoer weergeeft~\autocite{DeVogelaere2025}. Voordat een nieuwe gebruikersinterface kan ontwikkeld worden, moet de huidige situatie worden geanalyseerd. Dit omvat het in kaart brengen van de gebruikte frameworks, het datamodel en de manier waarop gegevens tussen de front-end en de back-end worden uitgewisseld. In deze fase wordt zowel het technische als visuele aspect benaderd.
@@ -69,7 +48,6 @@ De properties worden weergegeven als dropdowns, binaire keuzeselectoren of invoe
 
 \subsection{Backend - Technisch}
 \subsubsection{IDP-Z3}
-%Bron: https://docs.idp-z3.be/en/latest/introduction.html
 IDP-Z3 is een redeneersysteem dat het Knowledge Base-paradigma implementeert met behulp van de FO[·]-taal. FO[·], ook bekend als FO-dot, is Eerste-Orde Logica waarmee kennis over een specifiek probleemgebied wordt vastgelegd. Deze kennis wordt vervolgens gebruikt om die problemen op te lossen door middel van redeneringen~\autocite{Carbonnelle2024}. Meer informatie over IDP-Z3 en de werking ervan is terug te vinden in de documentatie van~\textcite{Carbonnelle2024}.
 
 \subsubsection{Properties}
@@ -84,70 +62,702 @@ Bij het ontwikkelen van een nieuwe gebruikersinterface is het belangrijk te wete
 \subsection{Functionele vereisten}
 Deze vereisten beschrijven de functionaliteit die het systeem moet bieden, oftewel de functies die de interface moet ondersteunen om de gebruiker te helpen.
 
-\subsubsection{Selecteren van properties}
+\subsubsection{Must have}
+\paragraph{Selecteren van properties}
 Een gebruiker moet op properties kunnen klikken om een waarde in te vullen voor de gekozen property of om de verklaring te krijgen waarom een waarde al is gekozen of ingevuld.
 
-\subsubsection{Geselecteerde properties bijhouden}
+\paragraph{Geselecteerde properties bijhouden}
 De geselecteerde properties moeten worden bijgehouden en apart weergegeven.
 
-\subsubsection{Deselecteren van properties}
+\paragraph{Deselecteren van properties}
 Een gebruiker moet eerder gemaakte keuzes, zowel door zichzelf als door het systeem, ongedaan kunnen maken door een property te deselecteren. De waarde van de property moet worden gereset, zodat de betreffende property niet meer wordt bijgehouden of greyed out is.
 
-\subsubsection{Resetten van properties}
+\paragraph{Resetten van properties}
 Een gebruiker moet de waarden van alle properties kunnen resetten.
 
-\subsubsection{Hoveren over properties}
-Een gebruiker moet over properties kunnen hoveren om meer uitleg te krijgen over wat de betreffende property inhoudt.
-
-\subsubsection{Real-time feedback}
+\paragraph{Real-time feedback}
 De interface moet de gevolgen van de selecties van een gebruiker weergeven en moet kunnen verduidelijken waarom bepaalde keuzes automatisch worden toegepast. Een gebruiker moet dus directe feedback krijgen voor elke keuze die hij maakt.
 
-\subsubsection{Opslaan klikgedrag en visuele indicaties}
+\paragraph{Opslaan klikgedrag en visuele indicaties}
 Het systeem moet bijhouden welke properties door gebruikers worden aangeklikt, samen met de bijhorende relevantie. Wanneer een gebruiker een keuze ongedaan maakt door een property te deselecteren, moet het systeem de relevantie van die property opnieuw aanpassen. Op basis van deze relevantie bepaalt het systeem een gewicht of grootte voor elke property. Properties die frequent worden aangeklikt, worden groter en opvallender weergegeven. Het systeem werkt de weergave van de properties dagelijks bij.
-\subsubsection{Begeleiding}
+
+\paragraph{Begeleiding}
 De opgeslagen informatie van de properties wordt gebruikt om gerichte aanbevelingen te doen aan gebruikers. De interface moet vrijblijvende hulp en begeleiding bieden zonder de vrijheid van de gebruiker te beperken. Dit is belangrijk, aangezien de huidige interface geen ondersteuning biedt.
 
-\subsubsection{Visuele hiërarchie en uitlijning}
-De interface moet een duidelijke visuele hiërarchie en uitlijning hebben, met een logische structuur voor de presentatie van gegevens, zodat de gebruiker niet wordt overrompeld door te veel informatie. Dit is essentieel, omdat dit momenteel het probleem is van de bestaande gebruikersinterface.
+\paragraph{Visuele hiërarchie en uitlijning}
+De interface moet een duidelijke visuele hiërarchie en uitlijning hebben, met een logische en compacte structuur voor de presentatie van gegevens, zodat de gebruiker niet wordt overrompeld door te veel informatie. Dit is essentieel, omdat dit momenteel het probleem is van de bestaande gebruikersinterface.
 
-\subsubsection{Eenvoudige navigatie}
+\paragraph{Eenvoudige navigatie}
 De interface moet een eenvoudig navigatiepad bieden, zodat een gebruiker snel de gewenste informatie kan vinden en te allen tijde weet waar hij zich binnen de interface bevindt.
 
-\subsubsection{Backend integratie met IDP-Z3}
-Het systeem moet in staat zijn om te communiceren met IDP-Z3, wat momenteel gebeurt op bais JSON-berichten. Deze werkwijze moet behouden blijven. 
+\paragraph{Backend integratie met IDP-Z3}
+Het systeem moet in staat zijn om te communiceren met IDP-Z3, wat momenteel gebeurt op basis van JSON-berichten. Deze werkwijze moet behouden blijven.
+
+\subsubsection{Should have}
+\paragraph{Hoveren over properties}
+Een gebruiker moet over properties kunnen hoveren om meer uitleg te krijgen over wat de betreffende property inhoudt.
 
 \subsection{Niet-functionele vereisten}
 Deze vereisten beschrijven hoe het systeem de functionele vereisten moet uitvoeren. 
 
-\subsubsection{Gebruiksvriendelijkheid}
+\subsubsection{Must have}
+\paragraph{Gebruiksvriendelijkheid}
 De interface moet gebruiksvriendelijk zijn, zonder onnodige complexiteit en intuïtief aanvoelen, zodat een gebruiker er vlot mee kan werken.
 
-\subsubsection{Prestaties}
-De interface moet snel reageren op gebruikersinvoer en zonder merkbare vertraging worden bijgewerkt.
-
-\subsubsection{Esthetiek en visueel design}
+\paragraph{Esthetiek en visueel design}
 De interface moet een aantrekkelijke visuele laag bieden die de gebruiker niet alleen ondersteunt, maar ook een aangename ervaring biedt. Het design moet consistent, responsive en modern zijn.
 
-\subsubsection{Gebruik van kleuren}
+\paragraph{Gebruik van kleuren}
 De interface gebruikt kleuren om aan te geven welke properties relevant zijn en welke niet.
 
+\subsubsection{Should have}
+\paragraph{Prestaties}
+De interface moet snel reageren op gebruikersinvoer en zonder merkbare vertraging worden bijgewerkt.
+
 \section {Long list fase}
-Aan de hand van deze eisen en de informatie verzameld in de vorige fasen, zullen er potentiële front-end softwarebibliotheken worden gezocht en opgesomd. Hiervoor wordt de literatuur opnieuw geraadpleegd.
+Dit onderzoek bouwt voort op een reeds bestaand en actief project. De huidige webclient is ontwikkeld met Angular, een JavaScript-gebaseerd framework. In deze fase wordt er onderzocht welke softwarebibliotheken, binnen JavaScript of Angular zelf, geschikt zijn voor dit onderzoek. De focus ligt op libraries die gunstig zijn voor data- of tekstvisualisatie, aangezien het met de nieuwe webclient mogelijk moet zijn om woorden op een elegante en compacte manier weer te geven in verschillenden kleuren en groottes.\smallskip\par
+Binnen een library zijn vaak meerdere visualisatiemethoden beschikbaar. De insteek van deze bachelorproef was initieel om te onderzoeken of het mogelijk is een woordwolk te implementeren als nieuwe gebruikersinterface. Deze vergelijkende studie gaat echter breder dan alleen libraries voor woordwolken. Uit onderzoeken van~\textcite{Wang2015} worden er volgende categorieën van datavisualisatietechnieken aangehaald: grafieken, netwerken en hiërarchieën.\par Vooraleer een keuze wordt gemaakt, wordt de literatuur doorzocht naar alternatieven binnen deze drie categorieën.
 
-\section {Short list fase}
-Vervolgens wordt de lijst met alle gevonden alternatieven uitgedund. Via een samenvattende tabel worden de meest geschikte front-end softwarebibliotheek geselecteerd.
-
-\section{Architectuur van de applicatie}
-Een softwarebibliotheek is niet voldoende om een webapplicatie te bouwen. De architectuur van de applicatie moet ook uitgetekend en besproken worden. Er zal bepaald worden welke technologieën de applicatie moet bevatten. Hieronder is een hypothetische opstelling omtrent de architectuur van de applicatie gegeven:
-
-\begin{itemize} 
-    \item \textbf{Frontend:} Dit framework zal afhangen van de gekozen front-end softwarebibliotheek. Deze moeten namelijk compatibel zijn.
-    \item \textbf{Backend:} Dit framework zal afhangen van het gekozen front-end framework. Deze m\-oeten met elkaar kunnen communiceren. Er zal gebruik gemaakt worden van een REST API-server.
-    \item \textbf{Database:} Voor het bepalen van et datamodel en de databank kan er gekeken worden naar de huidige technologieën, maar dit is niet noodzakelijk.
+\subsection{Gevonden alternatieven}
+\subsubsection{D3.js}
+D3.js is een open-sourcebibliotheek die zich richt op animaties, interacties en dynamische visualisaties. De nadruk ligt op de efficiënte manipulatie van HTML-eleme\-ten. Standaard genereert D3.js geen voorgedefinieerde visualisaties; de functionaliteit moet daarom worden uitgebreid met plug-ins of externe bibliotheken. De bibliotheek biedt een breed scala aan lay-outs voor verschillende soorten data~\autocite{Wang2015}.
+\subsubsection{Sigma.js}
+Sigma.js is een open-sourcebibliotheek die in staat is dynamische interactieve grafen te tekenen. Deze library is makkelijk inzetbaar en kan vlot worden geïntegreerd in bestaande webtoepassingen. De standaardinstellingen van de bibliotheek bevatten diverse ingebouwde functies, waaronder ondersteuning voor muis- en aanraakbediening~\autocite{Wang2015}.
+\subsubsection{Cytoscape.js}
+Cytoscape.js is een open-sourcebibliotheek ontworpen voor het visualiseren van grafen. Het ondersteunt verschillende gebruikersinteracties zoals selecteren en pannen~\autocite{Wang2015}.
+\subsubsection{Highcharts}
+Highcharts is een open-sourcebibliotheek die ondersteuning biedt voor interactieve grafieken op basis van CSV- en JSON-data~\autocite{Vucetic2023}. De library beschikt over een eigen chatbot, wat het vergemakkelijkt om snel informatie op te zoeken en problemen op te lossen~\autocite{Highcharts2025}.
+\subsubsection{amCharts}
+amCharts is een hulpmiddel voor het visualiseren van complexe data via interactieve grafieken en kaarten. Standaard wordt data geleverd via een array die in de JavaScript-code is opgenomen, maar voor geavanceerdere toepassingen kunnen ook andere databronnen worden gebruikt~\autocite{Chandra2022}.
+\subsubsection{Vega}
+Vega functioneert als een raamwerk voor datavisualisatie. Het visuele uiterlijk en het interactieve gedrag wordt gedefinieerd aan de hand van JSON~\autocite{Chandra2022}. 
+\subsubsection{ZingChart}
+ZingChart biedt ontwikkelaars een oplossing voor het creëren van responsieve visualisaties~\autocite{Chandra2022}.
+\medskip\par
+Naast het raadplegen van wetenschappelijke en professionele bronnen, wordt er ook gezocht naar open-source GitHub-bibliotheken voor woordwolkvisualisaties. Hierbij is volgende alternatief gevonden:
+\begin{itemize}
+    \item \textbf{Wordcloud2.js}: een standalone library van Timothy Guan-tin Chien~\autocite{Chien2011}.
 \end{itemize}
 
+\subsection{Toetsen requirements}
+In dit deel van de fase worden de officiële websites en documentatie van elk alternatief zijn grondig bestudeerd. Vooraleer de vereisten geëvalueerd en getoetst kunnen worden, is het essentieel om eerst te bepalen welke visualisaties het meest geschikt en relevant zijn voor dit onderzoek. De nieuwe interface moet gestructureerd, overzichtelijk, compact, intuïtief én visueel aantrekkelijk zijn. Bepaalde visualisatietypes zoals lijn-, staaf- en kolomgrafieken, worden uitgesloten. Na een grondige analyse van de mogelijke visualisaties binnen de bibliotheken uit de long list, blijken de volgende structuren geschikt voor dit onderzoek: een woordwolk, een (packed) bubble chart en een graaf.\medskip\par
+Om de requirements op een correcte manier te kunnen toetsen, moet eerst technisch worden nagedacht over hoe elke vereiste geïmplementeerd kan worden. Da\-arbij wordt binnen de softwarebibliotheken gezocht naar functionaliteiten die standaard door de library worden aangeboden. Dit zijn de gewenste eigenschappen:
+\begin{itemize}
+    \item \textbf{Klik functie}: de gebruiker moet op een woord kunnen klikken om er een waarde aan toe te kennen.
+    \item \textbf{State management}: de gebruiker moet een overzicht kunnen zien van de woorden waaraan hij al een waarde heeft toegekend.
+    \item \textbf{(Re)render functie}: de visualisatie moet zich kunnen aanpassen of opnieuw laden op basis van de interacties van de gebruiker.
+    \item \textbf{Gebruik van verschillende kleuren binnen de visualisatie}: kleuren bieden visuele begeleiding, geven betekenis en zorgen voor een aangename uitstraling.
+    \item \textbf{Gebruik van verschillende tekstgroottes binnen de visualisatie}: variatie in tekstgrootte ondersteunt visuele hiërarchie, structuur en leesbaarheid.
+    \item \textbf{Hover functie}: de gebruiker moet met de muis over een woord kunnen bewegen om extra informatie over dat woord te verkrijgen.
+\end{itemize}
+
+De vereisten in de tabellen zijn gerangschikt volgens de volgorde zoals gedefinieerd in de requirementsanalysefase. Deze structuur wordt in de tabel weergegeven met een horizontale oriëntatie, waarbij de vereisten van links naar rechts worden gepresenteerd.
+
+\paragraph{D3.js - Woordwolk}
+Uit de documentatie van~\textcite{D3Contributors2025} en~\textcite{Mike2025} blijkt dat D3.js, en dus ook de woordwolkcomponent, ingebouwde klik- en hoverfunctionaliteiten biedt. Dit houdt in dat zowel het selecteren en deselecteren van eigenschappen als het tonen van extra informatie bij een woord wordt ondersteund. Het opslaan van klikgedrag is mogelijk, waardoor een relevantieverschil tussen eigenschappen kan worden opgebouwd. Ook het instellen van verschillende kleuren en tekstgroottes per woord is ondersteund. Bovendien kan D3.js goed overweg met JSON-data. Deze visualisatie maakt het dus mogelijk om visuele indicaties, begeleiding en hiërarchie te implementeren. Hoewel het bijhouden van geselecteerde properties niet standaard wordt voorzien binnen D3.js, kan deze functionaliteit wel eenvoudig worden toegevoegd via state management binnen het gebruikte JavaScript-framework.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{D3.js Woordwolk - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & $\bullet$ & $\bullet$ & ? \\
+            \bottomrule
+        \end{tabular}
+        \caption{D3.js Woordwolk - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+
+\paragraph{D3.js - Bubble Chart}
+Uit de documentatie van~\textcite{D3Contributors2025} en~\textcite{Mike2025a} blijkt dat de bubble chart-visualisatie sterk gelijkt op de woordwolk. Er is echter een duidelijk visueel verschil tussen beide libraries. Woordwolken gebruiken tekst als primair visueel element, met variaties in grootte, kleur en oriëntatie. Bubble charts daarentegen maken gebruik van cirkels als primair visueel element, waarbij tekst meestal een secundaire rol speelt. Het bijhouden van geselecteerde eigenschappen is ook in dit geval niet standaard voorzien binnen D3.js, maar deze functionaliteit kan worden toegevoegd via state management binnen het gebruikte JavaScript-framework.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{D3.js Bubble Chart - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & $\bullet$ & $\bullet$ & ? \\
+            \bottomrule
+        \end{tabular}
+        \caption{D3.js Bubble Chart - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+
+Wanneer er met grote datasets wordt gewerkt, kan een bubble chart onoverzichtelijk worden omdat deze niet meer binnen de schermgrootte past of niet volledig in één scherm weergegeven kan worden. Bubbels die zeer relevante woorden bevatten, kunnen namelijk snel te groot worden, terwijl tekst alleen minder ruimte inneemt.
+
+\paragraph{Sigma.js - Graaf}
+Uit de documentatie van~\textcite{SigmaJS2025} blijkt dat alle functionele requirements haalbaar zijn, met uitzondering van het bijhouden van de geselecteerde properties. Er zijn voldoende ondersteunde events beschikbaar, zoals klik-, enter- en leaveNode-events. Sigma.js zorgt ervoor dat de volledige graaf zichtbaar is en benut de beschikbare ruimte efficiënt. Een interessante functionaliteit van Sigma.js in het kader van dit onderzoek is de mogelijkheid om vlak vóór het renderen de eigenschappen van nodes dynamisch aan te passen.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Sigma.js - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            ? & $\bullet$ & $\bullet$ & ? \\
+            \bottomrule
+        \end{tabular}
+        \caption{Sigma.js - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+
+\paragraph{Cytoscape.js - Graaf}
+Het artikel van~\textcite{Franz2015} en de documentatie van Cytoscape.js~\textcite{Franz2025} geven aan dat de functionaliteiten van de library aan de meeste requirements voldoen. Opnieuw is er geen ingebouwde mogelijkheid om de geselecteerde properties bij te houden. Cytoscape.js maakt real-time feedback mogelijk dankzij de functionaliteit om elementen dynamisch toe te voegen, te verwijderen of te wijzigen. Daarnaast kunnen stylesheets tijdens runtime worden vervangen om de visuele stijl aan te passen. Deze library biedt ondersteuning voor JSON-import en -export, wat de integratie met backend-systemen zoals het IDP-Z3-syst\-eem mogelijk maakt. Ook gebruikersinteracties zoals klikken en hoveren kunnen worden afgehandeld. Een nuttige functionaliteit in het kader van dit onderzoek is dat de visualisatie automatisch wordt gerenderd wanneer nodig.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Cytoscape.js - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            ? & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Cytoscape.js - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+
+\paragraph{Highcharts - Woordwolk}
+Volgens de website en documentatie van~\textcite{Highcharts2009,Highcharts2009a} biedt de module zowel ingebouwde klik- als hoverfunctionaliteit, waardoor gebruikersinteracties kunnen worden afgehandeld. Daarnaast is het mogelijk om tekstgroottes en kleuren per woord aan te passen, wat belangrijk is voor het visualiseren van prioriteit en categorieën. Highcharts heeft een functie \textit{redraw} waardoor de woordwolk opnieuw wordt gerenderd. Highcharts kan overweg met JSON-data, maar heeft geen ingebouwde mogelijkheid voor het bijhouden van geselecteerde properties. Dit kan worden opgelost binnen de Angular-omgeving.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Highcharts Woordwolk - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            ? & $\bullet$ & $\bullet$ & ? \\
+            \bottomrule
+        \end{tabular}
+        \caption{Highcharts Woordwolk - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+
+\paragraph{Highcharts - Packed Bubble Chart}
+Net als bij de woordwolk ondersteunt de packed bubble chart klik- en hoverfuncties, en kunnen zowel kleuren als groottes aangepast worden op basis van de data. Beide visualisaties binnen Highcharts vertonen sterke gelijkenissen qua functionaliteit, maar verschillen in visuele presentatie. In tegenstelling tot de woordwolk maakt de packed bubble chart gebruik van cirkels, waarbij de grootte van elke cirkel wordt bepaald door de relevantie van de property~\autocite{Highcharts2009,Highcharts2009a}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Highcharts Packed Bubble Chart - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            ? & $\bullet$ & $\bullet$ & ? \\
+            \bottomrule
+        \end{tabular}
+        \caption{Highcharts Packed Bubble Chart - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+\paragraph{amCharts - Woordwolk}
+Uit de documentatie van~\textcite{amCharts2025} blijkt dat de woordwolkcomponent zeer flexibel is en tal van interactieve mogelijkheden biedt. Zo ondersteunt de bibliotheek zowel klik- als hoverfunctionaliteiten en laat ze toe om eigenschappen zoals grootte, kleur en positie van woorden dynamisch aan te passen. Daarnaast beschikt amCharts over geavanceerde animatieopties, wat zorgt voor een aantrekkelijke en gebruiksvriendelijke interface. De duidelijke ondersteuning voor JSON-data maakt het bovendien eenvoudig om te koppelen met de backend. De library biedt opnieuw geen ingebouwde state management voor het bijhouden van geselecteerde properties. Volgens~\textcite{Ravishankkar2017} heeft amCharts ook geen prestatieproblemen.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{amCharts Woordwolk - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            ? & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{amCharts Woordwolk - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+\paragraph{Vega - Woordwolk}
+De bibliotheek werkt met JSON-specificaties die de visualisatie en interacties definiëren. Uit de documentatie blijkt dat Vega ondersteuning biedt voor gebruikersinteracties zoals klikken en hoveren, en dat de visualisatie kan worden aangepast op basis van dynamische data. Hoewel Vega zeer flexibel is, vereist het meer code en configuratie dan gespecialiseerde woordwolk-libraries. Het bijhouden van geselecteerde properties is niet ingebouwd en moet worden geïmplementeerd in de Angular-applicatie. Volgens het onderzoek van~\textcite{Satyanarayan2017} is de interactieve performance van Vega minstens twee keer zo snel als die van een gelijkwaardig D3-programma.
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Vega Woordwolk - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            ? & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Vega Woordwolk - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+\paragraph{Vega - Packed Bubble Chart}
+De packed bubble chart visualisatie in Vega ondersteunt dezelfde functionaliteiten als de woordwolk. Ze verschillen enkel in visuele weergave.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Vega Packed Bubble Chart - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            ? & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Vega Packed Bubble Chart - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+\paragraph{ZingChart - Woordwolk}
+ZingChart bevat een renderfunctie waarmee verschillende renderopties kunnen worden meegegeven. Zowel klik- als hoverfunctionaliteit is mogelijk. Daarnaast geeft de documentatie aan dat de grootte, kleur en positie van woorden aangepast kunnen worden. Integratie met het backend-systeem is haalbaar, maar ingebouwd state management ontbreekt~\autocite{ZingChart2009}.
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{ZingChart Woordwolk - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            ? & $\bullet$ & $\bullet$ & ? \\
+            \bottomrule
+        \end{tabular}
+        \caption{ZingChart Woordwolk - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+
+\paragraph{Wordcloud2.js - Woordwolk}
+Uit de API-documentatie van~\textcite{Chien2011a} blijkt duidelijk welke functionaliteiten beschikbaar zijn binnen de woordwolk. De documentatie biedt een overzicht van de opties die kunnen worden meegegeven bij de configuratie. De woordwolk beschikt over ingebouwde klik- en hoverfuncties, en het is mogelijk om per woord een specifieke kleur en tekstgrootte toe te kennen. De library is eenvoudig te integreren en vereist minimale configuratie voor basisfunctionaliteit. WordCloud2.js werkt met arrays van woorden en gewichten, wat compatibel is met de JSON-data die het backend-systeem aanlevert. Net als bij de andere libraries is er echter geen ondersteuning voor het bijhouden van geselecteerde properties.
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccccccccc|c|}
+            \hline
+            \multicolumn{9}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & --- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Wordcloud2.js Woordwolk - Functionele requirements}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{|ccc|c|}
+            \hline
+            \multicolumn{3}{|c|}{M} & \multicolumn{1}{c|}{S} \\
+            \midrule
+            $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Wordcloud2.js Woordwolk - Niet-functionele requirements}
+    \end{minipage}
+    \caption*{($\bullet$ = req aanwezig; --- = req niet aanwezig; ? = geen info beschikbaar)}
+\end{table}
+\medskip\par Voor dit onderzoek mag geen enkele library prestatieproblemen vertonen, aangezien het prototype geen grote dataset hoeft te verwerken.
+
+\section {Short list fase}
+Uit de longlistfase kan geconcludeerd worden dat de besproken alternatieven sterk op elkaar lijken en grotendeels vergelijkbare functionaliteiten bieden. Het meest opvallende patroon is dat geen van de bibliotheken native ondersteuning biedt voor het bijhouden van geselecteerde properties. In dit onderzoek wordt er verdergegaan met de lichtgewicht, standalone library Wordcloud2.js. Een van de doelstellingen van deze studie is te onderzoeken of het mogelijk is om een woordwolk te integreren in de huidige webinterface. Aangezien deze library eenvoudig te integreren is en beschikt over duidelijke documentatie, vormt ze een geschikt alternatief.
+
+\section{Architectuur van de nieuwe gebruikersinterface}
+Een softwarebibliotheek is niet voldoende om een nieuwe gebruikersinterface te bouwen. De architectuur van de nieuwe gebruikersinterface moet ook besproken worden.
+
+\subsection{Frontend}
+Zoals hierboven reeds gezegd, is de frontend van de huidige webinterface ontwikkeld in Angular en blijft dit ongewijzigd. De gekozen softwarebibliotheek Wordcloud2.js wordt geïmplementeerd en gebruikt om een woordwolk te visualiseren.
+
+\subsection{Backend IDP-Z3}
+Het hele achterliggende redeneersysteem blijft ook behouden en ongewijzigd aangezien dit los staat van de nieuwe webinterface.
+
+\subsection{Backend Node.js en Express}
+Om het klikgedrag van de gebruiker op te slaan, is een REST API nodig. Wanneer de gebruiker een waarde toekent aan een property, wordt een HTTP-request verstuurd naar deze REST API om de interactie te registreren. Hiervoor wordt een backend opgezet met Node.js en Express in TypeScript, gebaseerd op een structuur die vergelijkbaar is met de tutorial van~\textcite{Mallawaarachchi2023}.
+
+\subsection{PostgreSQL en PgAdmin}
+De REST API heeft een databank nodig om de properties en interacties op te slaan. Er is gekozen voor de relationele databank PostgreSQL. Voor het beheren van deze databank wordt de grafische tool PgAdmin gebruikt.
+
+\paragraph{Opmerking}
+De keuze voor tools en frameworks zoals Express, Node.js en PostgreSQL is niet doorslaggevend voor dit onderzoek. Ze dienen enkel als hulpmiddelen om tot een oplossing te komen; hetzelfde resultaat kan ook met andere tools en frameworks worden bereikt.
+
 \section{Proof-of-concept bouwen}
-Nadat alle technische keuzes gemaakt zijn, zu\-llen deze getest en uitgewerkt worden. Er zal een prototype gebouwd worden om te valideren dat de gekozen technologieën effectief werken en de problemen oplossen.
+\subsection{Inlezen op huidige code}
+Zoals vermeld in de verduidelijkingsfase bouwt dit onderzoek voort op een bestaand en actief project. De oorspronkelijke, volledige codebase is terug te vinden in de GitLab-repository van~\textcite{Carbonnelle2019}. Vooraleer er aanpassingen of uitbreidingen aan de code kunnen worden gedaan, is het belangrijk om eerst de relevante bestaande code te bestuderen en te begrijpen. Voor dit onderzoek wordt specifiek gekeken naar het deelproject idp\_web\_client, aangezien dit de code bevat voor de visualisatie en verwerking van de Interactive Consultant.
+
+\subsection{Woordwolk visualisatie}
+Eerst en vooral moet de library worden geïntegreerd in het project.
+\begin{verbatim}npm install github:timdream/wordcloud2.js --save\end{verbatim}
+Om de woordwolk effectief te kunnen gebruiken en aanroepen, moet deze worden geïmporteerd in het gewenste bestand.
+\begin{verbatim}import WordCloud from 'wordcloud';\end{verbatim}
+Het principe van een woordwolk is dat deze bestaat uit woorden, waarbij elk woord een bepaald gewicht en een kleur heeft. In deze studie kan het gewicht van een woord geassocieerd worden met de relevantie ervan. Zoals te zien is in de API-documentatie van de library~\autocite{Chien2011}, kunnen verschillende opties worden meegegeven aan de woordwolk. Een daarvan is \textit{list}: een tweedimensionale array waarin elk woord samen met de bijbehorende relevantie wordt opgegeven.
+
+\paragraph{Woorden}
+In de huidige webinterface wordt geen gebruikgemaakt van een datamodel. De backend verstuurt alle benodigde informatie naar de webclient via een JSON-beri\-cht, dat in de webclient wordt bijgehouden in een meta-object. De properties worden hieruit gehaald en op het scherm weergegeven. Wanneer de gebruiker een waarde invult voor een property, herberekent de backend alle properties en wordt een nieuw JSON-bericht verstuurd, genaamd eval, waarna het meta-object wordt geüpdatet. Voor dit onderzoek zijn zowel de inhoud als de structuur van deze JSON-berichten van belang.
+
+\begin{figure}
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{structuurJson.png}
+        \caption[JSON-bericht]{\label{fig:structuurJson}Opbouw van meta en eval}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{structuurSymbol.png}
+        \caption[Symbool]{\label{fig:structuurSymbol}Structuur van symbool}
+    \end{minipage}
+\end{figure}
+
+De JSON-berichten, meta en eval, hebben dezelfde structuur maar verschillen in inhoud. In deze studie wordt enkel gewerkt met de volgende twee elementen: \textit{symbols} en \textit{valueInfo}. De array \textit{symbols} bevat symbolen die elk een element \textit{idpname} bevatten. Deze woorden worden gebruikt om in de woordwolk weer te geven. In het eerste deel van deze fase krijgen de woorden een vaste, hardgecodeerde relevantie. Later worden de gewichten uit de databank opgehaald. Het element \textit{valueInfo} bevat informatie over de mogelijke en de actuele waarde van elk symbool.
+
+\subsection{Integratie REST API en databank}
+Om de gebruiker te helpen vinden wat hij zoekt, is het noodzakelijk om onderscheid te kunnen maken in de relevantie van woorden. Dit benadrukt de noodzaak van een REST API en een databank, aangezien dit met het huidige datamodel niet eenvoudig kan worden bijgehouden. Hiervoor worden twee tabellen aangemaakt: \textit{properties} en \textit{user\_interactions} (zie codefragment \ref{code:postgresql-tabellen}).
+\begin{listing}
+    \begin{minted}[
+        frame=single,
+        linenos,
+        breaklines=true,
+        fontsize=\small,
+        baselinestretch=0.8
+        ]{postgresql}
+        CREATE TABLE properties ( 
+        id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
+        guinaam VARCHAR(100) NOT NULL, 
+        relevantie INTEGER NOT NULL 
+        );
+        
+        CREATE TABLE user_interactions (
+        id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        propertyid INTEGER NOT NULL,
+        timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        interaction_type INTEGER NOT NULL DEFAULT 0 
+        CHECK (interaction_type IN (-2, 2)),
+        FOREIGN KEY (propertyid) REFERENCES properties(id)
+        );
+    \end{minted}
+    \caption{PostgreSQL-schema voor het creëren van de tabellen}
+    \label{code:postgresql-tabellen}
+\end{listing}
+De REST API is een Node.js- en Express-server geschreven in TypeScript en draait op poort 3000. Er is bewust gekozen om de databank onafhankelijk op te zetten, zodat andere databankimplementaties eenvoudig kunnen worden toegevoegd zonder dat bestaande code aangepast hoeft te worden. In codefragment \ref{code:config/db} is te zien hoe de juiste databaseimplementatie wordt geselecteerd op basis van een omgevingsvariabele. De file \textit{postgres-db.ts} (zie codefragment \ref{code:config/postgres}) bevat de queries en databaselogica specifiek voor PostgreSQL. Deze implementeert de DatabaseInterface met concrete methoden voor het ophalen, aanmaken en bijwerken van gegevens in een PostgreSQL-database. Door deze implementatie te scheiden van de interface in \textit{database.ts} (zie codefragment \ref{code:types/database}), wordt het dus mogelijk om eenvoudig andere databasetypes toe te voegen zonder de rest van de applicatie aan te passen.
+\begin{listing}
+    \begin{minted}[
+        frame=single,
+        linenos,
+        breaklines=true,
+        fontsize=\small,
+        baselinestretch=0.8
+        ]{typescript}
+        import { DatabaseInterface } from '../types/database';
+        import postgresDb from './postgres-db';
+        // Hier zou je andere database-implementaties kunnen importeren
+        import dotenv from 'dotenv';
+        
+        dotenv.config();
+        
+        // Configureer welke database je wilt gebruiken op basis van omgevingsvariabele
+        const dbType = process.env.DB_TYPE || 'postgres';
+        
+        let db: DatabaseInterface;
+        
+        switch (dbType) {
+            case 'postgres':
+            db = postgresDb;
+            break;
+            // Andere cases voor andere databases
+            default:
+            db = postgresDb; // Standaard als fallback
+        }
+        
+        export default db;
+    \end{minted}
+    \caption{config/db.ts: bevat configuratie voor het type databank dat wordt gebruikt}
+    \label{code:config/db}
+\end{listing}
+
+\begin{listing}
+    \begin{minted}[
+        frame=single,
+        linenos,
+        breaklines=true,
+        fontsize=\small,
+         baselinestretch=0.8
+        ]{typescript}
+        export interface DatabaseInterface {
+            findByGuinaam(tableName: string, guinaam: string): Promise<any>;
+            findByGuinaams(tableName: string, guinaams: string[]): Promise<any[]>;
+            create(tableName: string, data: any): Promise<any>;
+            findAll(tableName: string): Promise<any[]>;
+            addUserInteractionSelectedPropertyToe(tableName: string, guinaam: string): Promise<any>;
+            addUserInteractionUnselectedPropertyToe(tableName: string, guinaam: string): Promise<any>;
+            increaseRelevanceProperty(tableName: string, guinaam: string): Promise<any>;
+            decreaseRelevanceProperty(tableName: string, guinaam: string): Promise<any>;
+        }
+    \end{minted}
+    \caption{types/database.ts: interface met de te implementeren methoden per type databank}
+    \label{code:types/database}
+\end{listing}
+
+\begin{listing}
+    \begin{minted}[
+        frame=single,
+        linenos,
+        breaklines=true,
+        fontsize=\small,
+        baselinestretch=0.8
+        ]{typescript}
+        import { Pool, QueryResult } from 'pg';
+        import { DatabaseInterface } from '../types/database';
+        import dotenv from 'dotenv';
+        import { PropertyModel } from '../types/property';
+        
+        dotenv.config();
+        
+        class PostgresDatabase implements DatabaseInterface {
+            private pool: Pool;
+            
+            constructor() {
+                this.pool = new Pool({
+                    user: process.env.DB_USER,
+                    host: process.env.DB_HOST,
+                    database: process.env.DB_NAME,
+                    port: parseInt(process.env.DB_PORT || '5432')
+                });
+            }
+    \end{minted}
+    \caption{config/postrgres-db.ts: een implementatie van de DatabaseInterface voor PostgreSQL. Het bevat de concrete logica voor het uitvoeren van database-operaties specifiek voor PostgreSQL. De concrete code is verschillend voor elk onderzoek.}
+    \label{code:config/postgres}
+\end{listing}
+
+\paragraph{Synchroniseren woorden}
+Wanneer de Interactive Consultant wordt ingeladen, wordt een HTTP-POST-request verstuurd naar http://localhost:3000/. In de frontend wordt de \textit{idpname} van de symbolen uit het meta-object gehaald, ontdaan van underscores en meegestuurd in het request naar de backend. Vervolgens worden de properties uit de databank opgehaald en vergeleken met de ontvangen symbolen. Symbolen die nog niet in de databank aanwezig zijn, maar wel in het request voorkomen, worden toegevoegd aan de tabel \textit{properties}. Het is belangrijk dat de symbolen uit het initiële meta JSON-bericht en die in de databank voortdurend gesynchroniseerd blijven
+
+\paragraph{Ophalen gewichten van woorden}
+Bij het toevoegen van een property aan de tabel \textit{properties} wordt de initiële relevantie van het bijbehorende woord op 15 gezet. Wanneer de renderfunctie van de woordwolk wordt aangeroepen, worden de properties met hun bijbehorende gewicht uit deze tabel opgehaald en toegewezen aan de array die wordt meegegeven aan de optie \textit{list} van de woordwolk.
+
+\paragraph{Gebruikersinteractie registreren}
+Om de voorkeuren van de gebruiker in kaart te brengen, moeten zijn of haar keuzes worden vastgelegd. Hiervoor wordt gekeken naar het element \textit{valueInfo} van de eval JSON-berichten. Zoals eerder vermeld, wordt het meta-object in de frontend telkens bijgewerkt wanneer er een nieuw JSON-bericht van de backend wordt ontvangen. Wanneer de gebruiker een waarde toekent aan een property, krijgt deze de status \textit{GIVEN}. Elke property start initieel met de status \textit{UNKNOWN}, en krijgt deze status ook terug wanneer de gebruiker de waarde reset. Om te achterhalen welke property werd gereset, wordt gekeken naar het element \textit{previousActive}, dat alle symbolen bevat met hun waarden en statussen. In de code worden zowel de \textit{GIVEN}-symbolen als de \textit{previousGIVEN}-symbolen bijgehouden in een array. Wanneer het meta-object verandert en het aantal \textit{GIVEN}-symbolen groter is dan dat van de \textit{previousGIVEN}-symbolen, kan worden geconcludeerd dat de gebruiker een waarde heeft toegekend aan een property. Vervolgens wordt gekeken welk symbool aanwezig is in de \textit{GIVEN}-array maar niet in de \textit{previousGIVEN}-array. Dit is de property waarvan de relevantie verhoogd moet worden. Hetzelfde principe geldt omgekeerd voor het verlagen van de relevantie wanneer een waarde wordt gereset. 
+
+Om de gebruikersacties effectief te registreren wordt de tabel \textit{user\_interactions} gebruikt. Deze tabel registreert de volgende interacties:
+\begin{itemize}
+    \item \underline{Selecteren van een property}: het invullen van een waarde (relevantie +2)
+    \item \underline{Deselecteren van een property}: het resetten van een waarde (relevantie -2)
+\end{itemize}
+Naast de \textit{propertyid} wordt ook het tijdstip van de interactie opgeslagen. Hierdoor kan de woordwolk periodiek worden bijgewerkt. Aan het einde van de dag worden alle interacties van die dag per property opgeteld en bij de bestaande relevantiewaarde in de tabel \textit{properties} gevoegd. Zo ontstaat er na verloop van tijd een beeld van welke properties het meest relevant zijn voor de gebruiker. Hoewel de periodieke updates niet volledig zijn uitgewerkt in deze studie, vormen ze een waardevolle uitbreiding van deze bachelorproef.
+
+\paragraph{Relevantie rechtstreeks aanpassen}
+De aanpak om de relevantie van properties te wijzigen, zoals hierboven beschreven, is niet geschikt voor een demo. Daarom wordt er best ook een demovriendelijke werkwijze uitgewerkt. In plaats van de gebruikersinteracties op te slaan in de tabel \textit{user\_interactions}, wordt de relevantie rechtstreeks aangepast in de tabel \textit{properties}. De logica om te bepalen welke property moet worden aangepast, blijft ongewijzigd. Het verschil zit in de uitvoering: er wordt eenvoudigweg een HTTP-POST-request verstuurd naar een ander endpoint.
+
+\subsection{Styling van de woordwolk}
+In dit onderzoek is de visuele uitstraling minstens even belangrijk als de implementatie van functionaliteit. Daarom wordt er gewerkt met kleuren en animaties. Volgende zaken worden verwerkt:
+\begin{itemize}
+    \item {Kleur van een property per categorie}
+    \item {Uitleg over een property bij hoveren}
+    \item {Kader rondom de property bij hoveren}
+    \item {Achtergrondkleur van een \textit{consequency} property}
+\end{itemize}
+Om een overvloed aan kleuren te vermijden, krijgt elke property een kleur toegewezen op basis van de categorie. De unieke categorieën worden uit het meta-object gehaald en per sessie bijgehouden. Wanneer een gebruiker over een property hovert, verschijnt rechtsboven een tooltip met extra uitleg over de betreffende property (zie Figuur \ref{fig:tooltip}). Bij het hoveren wordt de property bovendien omkaderd in dezelfde kleur als die van de property zelf. Dit helpt de gebruiker om duidelijk te zien welke property hij mogelijk zal selecteren. \textit{CONSEQUENCE}-symbolen zijn properties waaraan de backend, het redeneersysteem, een waarde toekent als gevolg van een keuze van de gebruiker. Het invullen van een waarde bij een property kan dus gevolgen hebben voor de waarde van andere properties. Ook deze \textit{CONSEQUENCE}-symbolen worden uit het meta-object gehaald en bijgehouden in de webclient. Ze hebben de status \textit{CONSEQUENCE}. In de woordwolk worden deze symbolen weergegeven met een grijze achtergrondkleur (zie Figuur \ref{fig:consequence}).
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{tooltip.png}
+    \caption[Styling bij het hoveren]{\label{fig:tooltip}De gehoverde property fingerprint reader wordt omrand in de bijbehorende kleur, en er verschijnt een tooltip met extra informatie over deze property.}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{consequence.png}
+    \caption[Consequence-symbmolen]{\label{fig:consequence}De consequence-symbolen krijgen een grijze achtergrondkleur toegewezen.}
+\end{figure}
+\medskip\par Kaders en achtergrondkleuren zijn niet eenvoudig te implementeren, aangezien de posities van de woorden van de woordwolk niet standaard worden opgeslagen. Om dit probleem te omzeilen, worden muishover-events gesimuleerd waarbij de posities van de gehoverde properties worden opgeslagen.
+
+\paragraph{Visuele resultaat proof-of-concept}
+In dit onderdeel wordt het visuele resultaat van de proof-of-concept weergegeven. In Figuur \ref{fig:startscenario} is het startscenario van de webinterface te zien. Wanneer de applicatie voor de eerste keer wordt opgestart, krijgt elke property standaard dezelfde relevantiewaarde, namelijk 15.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{startscenario.png}
+    \caption[Startscenario webinterface]{\label{fig:startscenario}In het startscenario is de relevantie van elke property 15, wat resulteert in een woordwolk waarin alle woorden even groot worden weergegeven.}
+\end{figure}
+Figuur \ref{fig:doelscenario} is het beoogde scenario van deze bachelorproef. Het toont een mogelijke weergave van de woordwolk na langdurig gebruik. De belangrijkste properties voor de gebruikers zijn degene met de hoogste relevantiewaarde. Dit scenario wordt in de code gesimuleerd met de functie kenGewichtToe (zie codefragment \ref{code:kenGewichtToe}). Deze functie kent willekeurig een gewicht toe aan een woord, op basis van drie vooraf gedefinieerde gewichtscategorieën. De bijhorende code dient enkel ter illustratie en wordt verder niet gebruikt binnen de applicatie.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{doelscenario.png}
+    \caption[Doelscenario webinterface]{\label{fig:doelscenario}In het doelscenario varieert de relevantie van de properties in functie van de interacties van de gebruiker.}
+\end{figure}
+
+\begin{listing}
+    \begin{minted}[
+        frame=single,
+        linenos,
+        breaklines=true,
+        fontsize=\small,
+        baselinestretch=0.8
+        ]{typescript}
+        kenGewichtToe(): number {
+            const categorie1 = 15;
+            const categorie2 = 28;
+            const categorie3 = 60;
+            
+            const aantalWoorden = this.allSymbols.length;
+            
+            // Maximale aantallen per categorie
+            const maxCategorie1 = Math.round(aantalWoorden * 0.50); // 50% van totaal
+            const maxCategorie2 = Math.round(aantalWoorden * 0.35); // 35% van totaal
+            const maxCategorie3 = Math.round(aantalWoorden * 0.15); // 15% van totaal
+            
+            // Bepaal welke categorie aan de beurt is
+            if (this.categorie3Count < maxCategorie3 &&
+            this.gewichtTeller % 5 === 0) {
+                this.categorie3Count++;
+                this.gewichtTeller++;
+                return categorie3;
+            } else if (this.categorie2Count < maxCategorie2 &&
+            this.gewichtTeller % 3 === 1) {
+                this.categorie2Count++;
+                this.gewichtTeller++;
+                return categorie2;
+            } else if (this.categorie1Count < maxCategorie1) {
+                this.categorie1Count++;
+                this.gewichtTeller++;
+                return categorie1;
+            } else {
+                // Als alle categorieën zijn opgebruikt, standaard naar categorie1
+                return categorie1;
+            }
+        }
+        \end{minted}
+        \caption{De hulpmethode \textit{kenGewichtToe} verdeelt de woorden in drie categorieën met verschillende gewichten (15, 28 en 60) volgens een vastgelegde verhouding van 50\%, 35\% en 15\% van het totale aantal woorden. De toekenning gebeurt volgens een rotatiepatroon.}
+        \label{code:kenGewichtToe}
+    \end{listing}
 
 \section{Conclusiefase}
-Na de proof-of-concept wordt er een aanbeveling gegeven over het beste mogelijke alternatief. Ook de overgebleven  aspecten die niet aanwezig zijn in een van de onderzochte opties worden geïdentificeerd.
+De implementatie van de woordwolk-library WordCloud2.js voldoet aan alle requirements, op één na: het bijhouden en weergeven van de geselecteerde properties is nog niet uitgewerkt. Desondanks heeft deze technologie aangetoond een geschikte keuze te zijn voor het visualiseren van properties op een interactieve, dynamische en prioriteitsgestuurde manier. Ze vormt een significante verbetering ten opzichte van de huidige gebruikersinterface en biedt een verbeterde navigeerbaarheid en bruikbaarheid. Dit betekent echter niet dat dit de enige mogelijke optie is. Een nieuw prototype zou ontwikkeld kunnen worden met behulp van een andere eerder opgelijste library.

@@ -1,0 +1,24 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{DatabaseInterface}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}../types/database\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{n+nx}{postgresDb}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}./postgres\PYGZhy{}db\PYGZsq{}}\PYG{p}{;}
+\PYG{c+c1}{// Hier zou je andere database\PYGZhy{}implementaties kunnen importeren}
+\PYG{k}{import}\PYG{+w}{ }\PYG{n+nx}{dotenv}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}dotenv\PYGZsq{}}\PYG{p}{;}
+
+\PYG{n+nx}{dotenv}\PYG{p}{.}\PYG{n+nx}{config}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{c+c1}{// Configureer welke database je wilt gebruiken op basis van omgevingsvariabele}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{dbType}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{process}\PYG{p}{.}\PYG{n+nx}{env}\PYG{p}{.}\PYG{n+nx}{DB\PYGZus{}TYPE}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}postgres\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n+nx}{db}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{DatabaseInterface}\PYG{p}{;}
+
+\PYG{k}{switch}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{dbType}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}postgres\PYGZsq{}}\PYG{o}{:}
+\PYG{+w}{    }\PYG{n+nx}{db}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{postgresDb}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{    }\PYG{c+c1}{// Andere cases voor andere databases}
+\PYG{+w}{    }\PYG{n+nx}{default}\PYG{o}{:}
+\PYG{+w}{    }\PYG{k+kt}{db}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{postgresDb}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// Standaard als fallback}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k}{export}\PYG{+w}{ }\PYG{k}{default}\PYG{+w}{ }\PYG{n+nx}{db}\PYG{p}{;}
+\end{MintedVerbatim}

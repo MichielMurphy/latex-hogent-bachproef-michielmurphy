@@ -1,0 +1,16 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{n}{properties}\PYG{+w}{ }\PYG{p}{(}
+\PYG{n}{id}\PYG{+w}{ }\PYG{n+nb}{INTEGER}\PYG{+w}{ }\PYG{k}{GENERATED}\PYG{+w}{ }\PYG{k}{ALWAYS}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{k}{IDENTITY}\PYG{+w}{ }\PYG{k}{PRIMARY}\PYG{+w}{ }\PYG{k}{KEY}\PYG{p}{,}
+\PYG{n}{guinaam}\PYG{+w}{ }\PYG{n+nb}{VARCHAR}\PYG{p}{(}\PYG{l+m+mf}{100}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{NOT}\PYG{+w}{ }\PYG{k}{NULL}\PYG{p}{,}
+\PYG{n}{relevantie}\PYG{+w}{ }\PYG{n+nb}{INTEGER}\PYG{+w}{ }\PYG{k}{NOT}\PYG{+w}{ }\PYG{k}{NULL}
+\PYG{p}{)}\PYG{p}{;}
+
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{n}{user\PYGZus{}interactions}\PYG{+w}{ }\PYG{p}{(}
+\PYG{n}{id}\PYG{+w}{ }\PYG{n+nb}{INTEGER}\PYG{+w}{ }\PYG{k}{GENERATED}\PYG{+w}{ }\PYG{k}{ALWAYS}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{k}{IDENTITY}\PYG{+w}{ }\PYG{k}{PRIMARY}\PYG{+w}{ }\PYG{k}{KEY}\PYG{p}{,}
+\PYG{n}{propertyid}\PYG{+w}{ }\PYG{n+nb}{INTEGER}\PYG{+w}{ }\PYG{k}{NOT}\PYG{+w}{ }\PYG{k}{NULL}\PYG{p}{,}
+\PYG{n+nb}{timestamp}\PYG{+w}{ }\PYG{n+nb}{TIMESTAMP}\PYG{+w}{ }\PYG{k}{NOT}\PYG{+w}{ }\PYG{k}{NULL}\PYG{+w}{ }\PYG{k}{DEFAULT}\PYG{+w}{ }\PYG{k}{CURRENT\PYGZus{}TIMESTAMP}\PYG{p}{,}
+\PYG{n}{interaction\PYGZus{}type}\PYG{+w}{ }\PYG{n+nb}{INTEGER}\PYG{+w}{ }\PYG{k}{NOT}\PYG{+w}{ }\PYG{k}{NULL}\PYG{+w}{ }\PYG{k}{DEFAULT}\PYG{+w}{ }\PYG{l+m+mf}{0}
+\PYG{k}{CHECK}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{interaction\PYGZus{}type}\PYG{+w}{ }\PYG{k}{IN}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+\PYG{k}{FOREIGN}\PYG{+w}{ }\PYG{k}{KEY}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{propertyid}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{REFERENCES}\PYG{+w}{ }\PYG{n}{properties}\PYG{p}{(}\PYG{n}{id}\PYG{p}{)}
+\PYG{p}{)}\PYG{p}{;}
+\end{MintedVerbatim}

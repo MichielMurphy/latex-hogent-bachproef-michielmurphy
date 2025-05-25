@@ -1,0 +1,20 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{Pool}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{QueryResult}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}pg\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{DatabaseInterface}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}../types/database\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{n+nx}{dotenv}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}dotenv\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{PropertyModel}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}../types/property\PYGZsq{}}\PYG{p}{;}
+
+\PYG{n+nx}{dotenv}\PYG{p}{.}\PYG{n+nx}{config}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nx}{PostgresDatabase}\PYG{+w}{ }\PYG{k}{implements}\PYG{+w}{ }\PYG{n+nx}{DatabaseInterface}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{private}\PYG{+w}{ }\PYG{n+nx}{pool}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{Pool}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k+kr}{constructor}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{pool}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{Pool}\PYG{p}{(}\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n+nx}{user}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{process.env.DB\PYGZus{}USER}\PYG{p}{,}
+\PYG{+w}{            }\PYG{n+nx}{host}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{process.env.DB\PYGZus{}HOST}\PYG{p}{,}
+\PYG{+w}{            }\PYG{n+nx}{database}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{process.env.DB\PYGZus{}NAME}\PYG{p}{,}
+\PYG{+w}{            }\PYG{n+nx}{port}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{parseInt}\PYG{p}{(}\PYG{n+nx}{process}\PYG{p}{.}\PYG{n+nx}{env}\PYG{p}{.}\PYG{n+nx}{DB\PYGZus{}PORT}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}5432\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

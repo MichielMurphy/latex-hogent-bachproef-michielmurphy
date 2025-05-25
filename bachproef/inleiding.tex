@@ -5,18 +5,6 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-%De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}: 
-
-%\begin{itemize}
-%  \item context, achtergrond
-%  \item afbakenen van het onderwerp
-%  \item verantwoording van het onderwerp, methodologie
-%  \item probleemstelling
-%  \item onderzoeksdoelstelling
-%  \item onderzoeksvraag
-%  \item \ldots
-%\end{itemize}
-
 In de jaren 80 en 90 werden expertsystemen ingezet als een vorm van kunstmatige intelligentie. Deze systemen simuleerden het besluitvormingsproces van menselijke experts binnen een probleemdomein en bestonden uit een kennisbank met feiten en regels, gecombineerd met een inferentie-engine~\autocite{Angeli2010,Castillo2012}. Dit laatste onderdeel werkte met if-then-regels en kon logische conclusies trekken op basis van de beschikbare kennis~\autocite{Buchanan1988}. Een nadeel van expertsystemen was dat hun denkproces vastlag. Ze konden enkel beslissingen nemen op basis van vooraf vastgelegde regels en logica. Ze waren niet in staat om nieuwe of onverwachte situaties op te vangen of zich aan te passen zoals een mens dat zou doen~\autocite{Castillo2012}. Bovendien had de gebruiker zelf geen vrijheid in het maken van keuzes, maar werd hij slechts begeleid naar een oplossing.\par
 \medskip
 Halverwege de jaren 90 verschenen de webshops~\autocite{Chu2007}. Het aantal B2C-online winkels blijft tot op de dag van vandaag groeien~\autocite{Pokki2016}. In tegenstelling tot expertsystemen hebben gebruikers de mogelijkheid om zelf te zoeken naar wat ze nodig hebben. Dit geeft hen meer controle en vrijheid in hun keuzeproces, maar biedt tegelijkertijd minder begeleiding dan een expertsysteem.\par
@@ -29,8 +17,6 @@ Naast het creëren van een aangename en correcte gebruikerservaring, spelen visu
 \label{sec:probleemstelling}
 Deze studie richt zich op de online webIDE van het IDP-Z3 redeneersysteem van de KU Leuven. De huidige gebruikersinterface van deze webIDE overrompelt eindgebruikers met ongestructureerde componenten en informatie. De gebruiker wordt niet begeleid of geholpen doorheen de UI om te vinden wat hij of zij zoekt. Momenteel wordt er een set van eigenschappen (properties) gevisualiseerd die kan gezien worden als filters die niet aangepast wordt door interactie van de gebruiker. Er is ruimte voor het verbeteren in bruikbaarheid en navigeerbaarheid van de user interface. Daarnaast heeft de huidige UI een zwakke visuele uitstraling.
 
-%Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
-
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 De centrale vraag van dit onderzoek is: Hoe kan een front-end softwarebibliotheek die een dataset op een interactieve, dynamische en prioriteit gestuurde manier visualiseert, geïmplementeerd worden om structuur en duidelijkheid te creëren, zodat de navigatie en bruikbaarheid van de IDP-Z3 webIDE van de KU Leuven verbeterd worden? Verder worden er antwoorden gevonden op de volgende deelvragen:
@@ -42,29 +28,17 @@ De centrale vraag van dit onderzoek is: Hoe kan een front-end softwarebibliothee
     \item Wat zijn de visualisatietools die kunnen gebruikt worden en welke is de meest toepasselijke?
 \end{itemize}
 
-%    literatuurstudie: wat is een recommender systeem? of deelvraag?
-
-%Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
-
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 Het doel van deze studie is het ontwikkelen van een dynamische en interactieve gebruikersinterface (UI) voor de Interactive Consultant (IC) van de KU Leuven. Deze UI visualiseert een dynamische set van properties, die worden geïdentificeerd door korte woorden of zinnen. Hierbij is het essentieel dat het belang van deze eigenschappen wordt berekend en weergegeven op basis van gebruikersbehoeften en de volgorde waarin ze worden geselecteerd.\smallskip\par Om dit te realiseren, wordt er een gepersonaliseerde, tweede generatie recomm\-ender-systeem ingezet. De aanbevelingen zijn gebaseerd op gebruikersvoorkeuren en -gedrag, maar in tegenstelling tot bestaande systemen worden de suggesties niet opgelegd. Het systeem is ontworpen om gebruikers niet het gevoel te geven dat ze worden beïnvloed door reclame of opdringerige aanbevelingen. De gebruiker krijgt vrijblijvende begeleiding, maar behoudt tegelijkertijd volledige vrijheid in het maken van keuzes. Daarnaast moet de nieuwe UI, net als de huidige, in staat zijn om feedback te geven over properties.\smallskip\par  Voorafgaand aan de implementatie wordt een vergelijkende studie uitgevoerd, gevolgd door de ontwikkeling van een proof-of-concept. Het beoogde eindresultaat is een webapplicatie gebruikmakend van een softwarebibliotheek en een berekeningsmodel gebaseerd op een memory-based algoritme. Deze applicatie communiceert met een REST API-server en slaat de selectiekeuzes van gebruikers op in een databank. Op basis van een requirements-analyse uit de vergelijkende studie wordt bepaald welke front-end softwarebibliotheek hiervoor het meest geschikt is.
 
-%Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
-
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
-
-% Het is gebruikelijk aan het einde van de inleiding een overzicht te
-% geven van de opbouw van de rest van de tekst. Deze sectie bevat al een aanzet
-% die je kan aanvullen/aanpassen in functie van je eigen tekst.
 
 De rest van deze bachelorproef is als volgt opgebouwd:
 
 In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand van zaken binnen het onderzoeksdomein, op basis van een literatuurstudie.
 
 In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
-
-% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
 
 In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
