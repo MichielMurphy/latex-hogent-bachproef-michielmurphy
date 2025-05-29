@@ -1,0 +1,54 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+vocabulary V\PYGZob{}
+    type Product\PYGZus{}code
+    type Product\PYGZus{}type
+    type Brand
+    type Family
+    type Processor\PYGZus{}model
+    type Processor\PYGZus{}family
+
+    product\PYGZus{}type: Product\PYGZus{}code \PYGZhy{}\PYGZgt{} Product\PYGZus{}type
+    brand: Product\PYGZus{}code \PYGZhy{}\PYGZgt{} Brand
+    family: Product\PYGZus{}code \PYGZhy{}\PYGZgt{} Family
+    processor\PYGZus{}model: Product\PYGZus{}code \PYGZhy{}\PYGZgt{} Processor\PYGZus{}model
+    internal\PYGZus{}memory: Product\PYGZus{}code \PYGZhy{}\PYGZgt{} Int
+    ssd\PYGZus{}capacity: Product\PYGZus{}code \PYGZhy{}\PYGZgt{} Int
+
+    processor\PYGZus{}family: Processor\PYGZus{}model \PYGZhy{}\PYGZgt{} Processor\PYGZus{}family
+    processor\PYGZus{}cores: Processor\PYGZus{}model \PYGZhy{}\PYGZgt{} Int
+
+    product\PYGZus{}code\PYGZus{}: \PYGZhy{}\PYGZgt{} Product\PYGZus{}code
+    product\PYGZus{}type\PYGZus{}: \PYGZhy{}\PYGZgt{} Product\PYGZus{}type
+    brand\PYGZus{}: \PYGZhy{}\PYGZgt{} Brand
+    internal\PYGZus{}memory\PYGZus{}: \PYGZhy{}\PYGZgt{} Int
+    family\PYGZus{}: \PYGZhy{}\PYGZgt{} Family
+    processor\PYGZus{}model\PYGZus{}: \PYGZhy{}\PYGZgt{} Processor\PYGZus{}model
+    ssd\PYGZus{}capacity\PYGZus{}: \PYGZhy{}\PYGZgt{} Int
+    processor\PYGZus{}family\PYGZus{}: \PYGZhy{}\PYGZgt{} Processor\PYGZus{}family
+    processor\PYGZus{}cores\PYGZus{}: \PYGZhy{}\PYGZgt{} Int
+\PYGZcb{}
+
+structure S: V\PYGZob{}
+    Product\PYGZus{}code := \PYGZob{}\PYGZus{}9570\PYGZus{}0286, *7790*5859, *5587*3835, *20RH0000US, *20QN003TUS, XXN03, *3579*7181, A15\PYGZus{}9597, *3779*9822, PS585E\PYGZus{}01F008DU, *9560*4575, *7373*0842, *9570*0378, PSC0ME\PYGZus{}01S00TEN, \PYGZus{}4UM36EA,…\PYGZcb{}
+    Product\PYGZus{}type := \PYGZob{}Hybrid, Notebook, Mobile\PYGZus{}workstation\PYGZcb{}.
+    Brand := \PYGZob{}DELL, Alienware, Toshiba, Lenovo, HP, Fujitsu\PYGZcb{}.
+    Family := \PYGZob{}LIFEBOOK, Satellite\PYGZus{}Pro, *, G3, ENVY, ThinkBook, Latitude, Vostro, Tecra, Inspiron, FAMILY*MISSING, Portege, dynabook, ThinkPad, Precision, XPS, OMEN, G7, G5\PYGZcb{}.
+    Processor\PYGZus{}model := \PYGZob{}i5\PYGZus{}8250U, i5\PYGZus{}8300H, E\PYGZus{}2276M, i9\PYGZus{}9880H, i5\PYGZus{}8265U, i7\PYGZus{}7Y75, i7\PYGZus{}10510U, i5\PYGZus{}7200U, i5\PYGZus{}10210U, i7\PYGZus{}8705G, i7\PYGZus{}8565U, i7\PYGZus{}6500U, i3\PYGZus{}6006U, i7\PYGZus{}7700HQ, i5\PYGZus{}8400H, i5\PYGZus{}8305G, i7\PYGZus{}8850H, i5\PYGZus{}6300U, i5\PYGZus{}5200U, i9\PYGZus{}8950HK, i7\PYGZus{}9750H, i5\PYGZus{}6200U, i7\PYGZus{}6700HQ, i7\PYGZus{}7500U, i7\PYGZus{}8750H, T6670, i7\PYGZus{}7600U, i7\PYGZus{}9850H, i7\PYGZus{}8665U, i7\PYGZus{}1065G7, i7\PYGZus{}8550U, i5\PYGZus{}4210M\PYGZcb{}.
+    product\PYGZus{}type := \PYGZob{}A15\PYGZus{}9597 \PYGZhy{}\PYGZgt{} Notebook, A17\PYGZus{}0289 \PYGZhy{}\PYGZgt{} Notebook, *3579*9785 \PYGZhy{}\PYGZgt{} Notebook, *3579*7181 \PYGZhy{}\PYGZgt{} Notebook, *0G4RK \PYGZhy{}\PYGZgt{} Notebook, *73M2V \PYGZhy{}\PYGZgt{} Notebook, T6FN6 \PYGZhy{}\PYGZgt{} Notebook, *3779*9488 \PYGZhy{}\PYGZgt{} Notebook, *3779*9822 \PYGZhy{}\PYGZgt{} Notebook, *5587*3835 \PYGZhy{}\PYGZgt{} Notebook, *5587*3719 \PYGZhy{}\PYGZgt{} Notebook, *5590*6061 \PYGZhy{}\PYGZgt{} Notebook, *5590*6078 \PYGZhy{}\PYGZgt{} Notebook, *7790*5842 \PYGZhy{}\PYGZgt{} Notebook, *7790*5859 \PYGZhy{}\PYGZgt{} Notebook\PYGZcb{}
+\PYGZcb{}
+
+theory T: V\PYGZob{}
+    ssd\PYGZus{}capacity(product\PYGZus{}code\PYGZus{}()) = ssd\PYGZus{}capacity\PYGZus{}().
+    product\PYGZus{}type(product\PYGZus{}code\PYGZus{}()) = product\PYGZus{}type\PYGZus{}().
+    family(product\PYGZus{}code\PYGZus{}()) = family\PYGZus{}().
+    processor\PYGZus{}model(product\PYGZus{}code\PYGZus{}()) = processor\PYGZus{}model\PYGZus{}().
+    brand(product\PYGZus{}code\PYGZus{}()) = brand\PYGZus{}().
+    internal\PYGZus{}memory(product\PYGZus{}code\PYGZus{}()) = internal\PYGZus{}memory\PYGZus{}().
+    processor\PYGZus{}family(processor\PYGZus{}model\PYGZus{}()) = processor\PYGZus{}family\PYGZus{}().
+    processor\PYGZus{}cores(processor\PYGZus{}model\PYGZus{}()) = processor\PYGZus{}cores\PYGZus{}().
+\PYGZcb{}
+
+procedure main() \PYGZob{}
+    pretty\PYGZus{}print(model\PYGZus{}expand(S, T))
+\PYGZcb{}
+\end{MintedVerbatim}

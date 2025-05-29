@@ -48,7 +48,72 @@ De properties worden weergegeven als dropdowns, binaire keuzeselectoren of invoe
 
 \subsection{Backend - Technisch}
 \subsubsection{IDP-Z3}
-IDP-Z3 is een redeneersysteem dat het Knowledge Base-paradigma implementeert met behulp van de FO[·]-taal. FO[·], ook bekend als FO-dot, is Eerste-Orde Logica waarmee kennis over een specifiek probleemgebied wordt vastgelegd. Deze kennis wordt vervolgens gebruikt om die problemen op te lossen door middel van redeneringen~\autocite{Carbonnelle2024}. Meer informatie over IDP-Z3 en de werking ervan is terug te vinden in de documentatie van~\textcite{Carbonnelle2024}.
+IDP-Z3 is een redeneersysteem dat het Knowledge Base-paradigma implementeert met behulp van de FO[·]-taal. FO[·], ook bekend als FO-dot, is Eerste-Orde Logica waarmee kennis over een specifiek probleemgebied wordt vastgelegd. Deze kennis wordt vervolgens gebruikt om die problemen op te lossen door middel van redeneringen~\autocite{Carbonnelle2024}. In codefragment \ref{code:FO-language}  staat een voorbeeld van de FO[.]-taal dat  gebruikt wordt in deze studie als vereenvoudigde demo tijdens het maken van de proof-of-concept. Meer informatie over IDP-Z3 en de werking ervan is terug te vinden in de documentatie van~\textcite{Carbonnelle2024}.
+
+\begin{listing}
+\begin{minted}[
+        frame=single,
+        linenos,
+        breaklines=true,
+        fontsize=\small,
+        baselinestretch=0.8
+        ]{text}
+        vocabulary V{
+            type Product_code
+            type Product_type
+            type Brand
+            type Family
+            type Processor_model
+            type Processor_family
+            
+            product_type: Product_code -> Product_type
+            brand: Product_code -> Brand
+            family: Product_code -> Family
+            processor_model: Product_code -> Processor_model
+            internal_memory: Product_code -> Int
+            ssd_capacity: Product_code -> Int
+            
+            processor_family: Processor_model -> Processor_family
+            processor_cores: Processor_model -> Int
+            
+            product_code_: -> Product_code
+            product_type_: -> Product_type
+            brand_: -> Brand
+            internal_memory_: -> Int
+            family_: -> Family
+            processor_model_: -> Processor_model
+            ssd_capacity_: -> Int
+            processor_family_: -> Processor_family
+            processor_cores_: -> Int
+        }
+        
+        structure S: V{
+            Product_code := {_9570_0286, *7790*5859, *5587*3835, *20RH0000US, *20QN003TUS, XXN03, *3579*7181, A15_9597, *3779*9822, PS585E_01F008DU, *9560*4575, *7373*0842, *9570*0378, PSC0ME_01S00TEN, _4UM36EA,…}
+            Product_type := {Hybrid, Notebook, Mobile_workstation}.
+            Brand := {DELL, Alienware, Toshiba, Lenovo, HP, Fujitsu}.
+            Family := {LIFEBOOK, Satellite_Pro, *, G3, ENVY, ThinkBook, Latitude, Vostro, Tecra, Inspiron, FAMILY*MISSING, Portege, dynabook, ThinkPad, Precision, XPS, OMEN, G7, G5}.
+            Processor_model := {i5_8250U, i5_8300H, E_2276M, i9_9880H, i5_8265U, i7_7Y75, i7_10510U, i5_7200U, i5_10210U, i7_8705G, i7_8565U, i7_6500U, i3_6006U, i7_7700HQ, i5_8400H, i5_8305G, i7_8850H, i5_6300U, i5_5200U, i9_8950HK, i7_9750H, i5_6200U, i7_6700HQ, i7_7500U, i7_8750H, T6670, i7_7600U, i7_9850H, i7_8665U, i7_1065G7, i7_8550U, i5_4210M}.
+            product_type := {A15_9597 -> Notebook, A17_0289 -> Notebook, *3579*9785 -> Notebook, *3579*7181 -> Notebook, *0G4RK -> Notebook, *73M2V -> Notebook, T6FN6 -> Notebook, *3779*9488 -> Notebook, *3779*9822 -> Notebook, *5587*3835 -> Notebook, *5587*3719 -> Notebook, *5590*6061 -> Notebook, *5590*6078 -> Notebook, *7790*5842 -> Notebook, *7790*5859 -> Notebook}
+        }
+        
+        theory T: V{
+            ssd_capacity(product_code_()) = ssd_capacity_().
+            product_type(product_code_()) = product_type_().
+            family(product_code_()) = family_().
+            processor_model(product_code_()) = processor_model_().
+            brand(product_code_()) = brand_().
+            internal_memory(product_code_()) = internal_memory_().
+            processor_family(processor_model_()) = processor_family_().
+            processor_cores(processor_model_()) = processor_cores_().
+        }
+        
+        procedure main() {
+            pretty_print(model_expand(S, T))
+        }
+    \end{minted}
+    \caption{Vereenvoudigde laptop demo FO[·]-taal} \textbf{Vocabulary:} definieert alle woorden/types en relaties die gebruikt worden. \textbf{Structure:} de concrete data/waarden. \textbf{Theory:} de regels die worden gecontroleerd of afgeleid}
+\label{code:FO-language}
+\end{listing}
 
 \subsubsection{Properties}
 De properties worden ingeladen met een JSON-bericht. Wanneer een gebruiker een wijziging aanbrengt in een veld, wordt het systeem opnieuw berekend en wo\-rdt er een nieuw JSON-bestand naar de IC gestuurd. De IC communiceert continu met IDP-Z3 om tot een oplossing te komen.
@@ -541,6 +606,13 @@ In de huidige webinterface wordt geen gebruikgemaakt van een datamodel. De backe
 \end{figure}
 
 De JSON-berichten, meta en eval, hebben dezelfde structuur maar verschillen in inhoud. In deze studie wordt enkel gewerkt met de volgende twee elementen: \textit{symbols} en \textit{valueInfo}. De array \textit{symbols} bevat symbolen die elk een element \textit{idpname} bevatten. Deze woorden worden gebruikt om in de woordwolk weer te geven. In het eerste deel van deze fase krijgen de woorden een vaste, hardgecodeerde relevantie. Later worden de gewichten uit de databank opgehaald. Het element \textit{valueInfo} bevat informatie over de mogelijke en de actuele waarde van elk symbool.
+\medskip
+\par Wanneer er op een woord wordt geklikt, verschijnt er een pop-upvenster met daarin een van de eerder genoemde invoerelementen. Zoals geïllustreerd in figuur  \ref{fig:app-symbol}, wordt gebruikgemaakt van het reeds bestaande \textit{app-symbol}-component.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{app-symbol.png}
+    \caption[App-symbol component]{\label{fig:app-symbol}De manier waarop een waarde wordt ingevuld, is dezelfde als in de huidige interface.}
+\end{figure}
 
 \subsection{Integratie REST API en databank}
 Om de gebruiker te helpen vinden wat hij zoekt, is het noodzakelijk om onderscheid te kunnen maken in de relevantie van woorden. Dit benadrukt de noodzaak van een REST API en een databank, aangezien dit met het huidige datamodel niet eenvoudig kan worden bijgehouden. Hiervoor worden twee tabellen aangemaakt: \textit{properties} en \textit{user\_interactions} (zie codefragment \ref{code:postgresql-tabellen}).
